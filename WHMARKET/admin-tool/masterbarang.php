@@ -1,9 +1,4 @@
-<?php  
 
-include '../config/connection.php';
-
-$query = mysqli_query($conn, "SELECT * FROM ");
-?>
 
 <!doctype html>
 
@@ -41,7 +36,7 @@ $query = mysqli_query($conn, "SELECT * FROM ");
            
          </li>
 
-         <li><a href=''><span>Master Satuan</span></a>
+         <li><a href='mastersatuan.php'><span>Master Satuan</span></a>
            
          </li>
 

@@ -34,7 +34,7 @@
            
          </li>
 
-         <li><a href=''><span>Master Satuan</span></a>
+         <li><a href='masterbarang.php'><span>Master Satuan</span></a>
            
          </li>
 
