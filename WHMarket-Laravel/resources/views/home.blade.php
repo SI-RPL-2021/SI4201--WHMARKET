@@ -80,7 +80,7 @@
    </div>
    
    <div class="col-md-10" style="margin-top: 0px; ">
-	<h3><b>Welcome to</b>, Aplikasi Warehouse WHMARKET</h3>
+	<h3><b>Welcome to</b>, Aplikasi Warehouse WHMARKET!</h3>
 	
    </div>
    
