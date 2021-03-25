@@ -30,11 +30,11 @@
    <li><a href='home.php'><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>
       <ul>
-         <li><a href='masterbarang.php'><span>Master Barang</span></a>
+         <li><a href='><span>Master Barang</span></a>
            
          </li>
 
-         <li><a href='masterbarang.php'><span>Master Satuan</span></a>
+         <li><a href=''><span>Master Satuan</span></a>
            
          </li>
 
