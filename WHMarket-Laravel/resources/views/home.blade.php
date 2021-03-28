@@ -34,7 +34,7 @@
            
          </li>
 
-         <li><a href="{{ url('mastersatuan') }}"><span>Master Satuan</span></a>
+         <li><a href=""><span>Master Satuan</span></a>
            
          </li>
 
