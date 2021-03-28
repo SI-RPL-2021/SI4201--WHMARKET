@@ -27,10 +27,10 @@
       
       <div id='cssmenu'>
 <ul style="padding:0; background-color:#b3cde0;"> 
-   <li><a href='home.php'><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
+   <li><a href="{{ url('home') }}"><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>
       <ul>
-         <li><a href='><span>Master Barang</span></a>
+         <li><a href="{{ url('masterbarang') }}"><span>Master Barang</span></a>
            
          </li>
 
