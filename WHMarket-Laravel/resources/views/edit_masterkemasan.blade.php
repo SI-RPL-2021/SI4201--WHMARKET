@@ -27,14 +27,14 @@
       
       <div id='cssmenu'>
 <ul style="padding:0; background-color:#b3cde0;"> 
-   <li><a href="{{ url('home') }}"><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
+   <li><a href='home.php'><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>
       <ul>
-         <li><a href="{{ url('masterbarang') }}"><span>Master Barang</span></a>
+         <li><a href='masterbarang.php'><span>Master Barang</span></a>
            
          </li>
 
-         <li><a href=''><span>Master Satuan</span></a>
+         <li><a href='masterbarang.php'><span>Master Satuan</span></a>
            
          </li>
 
@@ -80,8 +80,19 @@
    </div>
    
    
-   <div class="col-md-10" style="margin-top: 0px; ">
-	<h3><b>Welcome to</b>, Aplikasi Warehouse WHMARKET</h3>
+   <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
+   <h2> Edit Master Kemasan </h2><br>
+				<form method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label>Nama Kemasan</label>
+						<input type="text" class="form-control" name="nama">
+					</div>
+					
+				
+					<button class="btn btn-primary" type="submit" name="submit">Save</button>
+                    <button class="btn btn-danger" type="cancel" name="cancel">Cancel</button>
+				</form>
+   </div>
    
    </div>
 	

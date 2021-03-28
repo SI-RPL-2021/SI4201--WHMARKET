@@ -30,11 +30,11 @@
    <li><a href='home.php'><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>
       <ul>
-         <li><a href='><span>Master Barang</span></a>
+         <li><a href='masterbarang.php'><span>Master Barang</span></a>
            
          </li>
 
-         <li><a href=''><span>Master Satuan</span></a>
+         <li><a href='masterbarang.php'><span>Master Satuan</span></a>
            
          </li>
 
@@ -81,29 +81,14 @@
    
    
    <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
-   <h2> Edit Master Barang </h2><br>
+   <h2> Edit Master Kategori </h2><br>
 				<form method="post" enctype="multipart/form-data">
 					<div class="form-group">
-						<label>Nama Barang</label>
+						<label>Nama Kategori</label>
 						<input type="text" class="form-control" name="nama">
 					</div>
-					<div class="form-group">
-						<label>Kategori</label>
-						<input type="text" class="form-control" name="harga">
-					</div>
-					<div class="form-group">
-						<label>Satuan</label>
-						<input type="text" class="form-control" name="image">
-					</div>
-                    <div class="form-group">
-						<label>Kemasan</label>
-						<input type="text" class="form-control" name="image">
-					</div>
-                    <div class="form-group">
-						<label>Harga</label>
-						<input type="int" class="form-control" name="image">
-					</div>
 					
+				
 					<button class="btn btn-primary" type="submit" name="submit">Save</button>
                     <button class="btn btn-danger" type="cancel" name="cancel">Cancel</button>
 				</form>
