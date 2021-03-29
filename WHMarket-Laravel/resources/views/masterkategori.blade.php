@@ -88,7 +88,7 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2> Master Kategori </h2>
                     <br>
-					<a href="{{ url('tambah_masterkategori') }}" class="btn btn-primary mt-3">Tambah Master Kategori</a>
+                    <a href="{{ url('tambah_masterkategori') }}" class="btn btn-primary mt-3">Tambah Master Kategori</a>
 					<br><br>
 					<table class="table table-bordered mt-3">
 						<thead class="thead-dark">
@@ -97,7 +97,23 @@
 								<th>Nama Kategori</th>
 								<th>Action</th>
 							</tr>
+                     @foreach($masterkategori as $item)
+                     <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item->nama_kategori }}</td>
+                        <td>
+                        <a href ="{{ url('edit_masterkategori/'.$item->id) }}">
+                        <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+                        </a>
+                        <form action="{{ url('masterkategori/'.$item->id) }}" method="post" class="d-inline">
+                         @method('delete')
+                           @csrf
+                           <button class="btn btn-danger btn-sm">Delete</button>
+                         </form>
+                        </td>
 						</thead>
+						@endforeach
+               </table>
 						
 			</div>
    

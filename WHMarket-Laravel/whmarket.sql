@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2021 at 04:00 PM
+-- Generation Time: Mar 29, 2021 at 04:58 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -20,6 +20,24 @@ SET time_zone = "+00:00";
 --
 -- Database: `whmarket`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `masterkategori`
+--
+
+CREATE TABLE `masterkategori` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_kategori` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `masterkategori`
+--
+
+INSERT INTO `masterkategori` (`id`, `nama_kategori`) VALUES
+(2, 'minuman');
 
 -- --------------------------------------------------------
 
@@ -43,6 +61,24 @@ INSERT INTO `masterkemasan` (`id`, `nama_kemasan`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mastersatuan`
+--
+
+CREATE TABLE `mastersatuan` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_satuan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `mastersatuan`
+--
+
+INSERT INTO `mastersatuan` (`id`, `nama_satuan`) VALUES
+(1, 'Kilo');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -60,7 +96,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2021_03_29_080322_create_masterkemasan_table', 2);
+(4, '2021_03_29_080322_create_masterkemasan_table', 2),
+(5, '2021_03_29_142307_create_mastersatuan_table', 3),
+(6, '2021_03_29_144306_create_masterkategori_table', 4),
+(7, '2021_03_29_144827_create_masterkategori_table', 5);
 
 -- --------------------------------------------------------
 
@@ -96,9 +135,21 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `masterkategori`
+--
+ALTER TABLE `masterkategori`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `masterkemasan`
 --
 ALTER TABLE `masterkemasan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `mastersatuan`
+--
+ALTER TABLE `mastersatuan`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -125,16 +176,28 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `masterkategori`
+--
+ALTER TABLE `masterkategori`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `masterkemasan`
 --
 ALTER TABLE `masterkemasan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `mastersatuan`
+--
+ALTER TABLE `mastersatuan`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`

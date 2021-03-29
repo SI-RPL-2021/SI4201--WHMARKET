@@ -86,16 +86,19 @@
    
    <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
    <h2> Edit Master Satuan </h2><br>
-				<form method="post" enctype="multipart/form-data">
+      <form action="{{ url('mastersatuan/'.$mastersatuan->id) }}" method="post">
+          @method('patch')
+          @csrf
 					<div class="form-group">
 						<label>Nama Satuan</label>
-						<input type="text" class="form-control" name="nama">
+						<input type="text" class="form-control" name="nama_satuan" value="{{ $mastersatuan->nama_satuan }}";
+					</div>
 					
                <br>
-
+   
 					<button class="btn btn-primary" type="submit" name="submit">Save</button>
-                    <button class="btn btn-danger" type="cancel" name="cancel">Cancel</button>
-				</form>
+               <a href="{{ url('mastersatuan') }}" class="btn btn-danger" type="cancel" name="cancel">Cancel</a>
+		</form>
    </div>
    
    </div>

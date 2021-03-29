@@ -86,15 +86,16 @@
    
    <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
    <h2> Tambah Master Kategori </h2><br>
-				<form method="post" enctype="multipart/form-data">
+             <form action="{{ url('masterkategori') }}" method="post" enctype="multipart/form-data">
+               @csrf
 					<div class="form-group">
 						<label>Nama Kategori</label>
-						<input type="text" class="form-control" name="nama">
-					
-                  <br>
+						<input type="text" class="form-control" name="nama_kategori">
 
+                  <br>
+					
 					<button class="btn btn-primary" type="submit" name="submit">Submit</button>
-                    <button class="btn btn-danger" type="cancel" name="cancel">Cancel</button>
+               <a href="{{ url('masterkategori') }}" class="btn btn-danger" type="cancel" name="cancel">Cancel</a>
 				</form>
    </div>
    

@@ -99,7 +99,7 @@
    
 					<button class="btn btn-primary" type="submit" name="submit">Save</button>
                <a href="{{ url('masterkemasan') }}" class="btn btn-danger" type="cancel" name="cancel">Cancel</a>
-				</form>
+		</form>
            
    </div>
    
