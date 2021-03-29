@@ -29,3 +29,15 @@ Route::post('masterkemasan', 'App\Http\Controllers\MasterKemasanController@input
 Route::get('edit_masterkemasan/{id}', 'App\Http\Controllers\MasterKemasanController@updateMasterKemasan');
 Route::patch('masterkemasan/{id}', 'App\Http\Controllers\MasterKemasanController@updateMasterKemasanProcess');
 Route::delete('masterkemasan/{id}', 'App\Http\Controllers\MasterKemasanController@delete');
+
+Route::get('mastersatuan', 'App\Http\Controllers\MasterSatuanController@data_mastersatuan');
+Route::post('mastersatuan', 'App\Http\Controllers\MasterSatuanController@inputMasterSatuan');
+Route::get('edit_mastersatuan/{id}', 'App\Http\Controllers\MasterSatuanController@updateMasterSatuan');
+Route::patch('mastersatuan/{id}', 'App\Http\Controllers\MasterSatuanController@updateMasterSatuanProcess');
+Route::delete('mastersatuan/{id}', 'App\Http\Controllers\MasterSatuanController@delete');
+
+Route::get('masterkategori', 'App\Http\Controllers\MasterKategoriController@data_masterkategori');
+Route::post('masterkategori', 'App\Http\Controllers\MasterKategoriController@inputMasterKategori');
+Route::get('edit_masterkategori/{id}', 'App\Http\Controllers\MasterKategoriController@updateMasterKategori');
+Route::patch('masterkategori/{id}', 'App\Http\Controllers\MasterKategoriController@updateMasterKategoriProcess');
+Route::delete('masterkategori/{id}', 'App\Http\Controllers\MasterKategoriController@delete');
