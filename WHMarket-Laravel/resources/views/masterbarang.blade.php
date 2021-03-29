@@ -19,7 +19,7 @@
    <div class="row">
    <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:140rem;">
           <li class="active" style="padding-left:8px; "> </li> 
-          <font color="#ffffff">WHMARKET</font><br>
+          <a font color="#ffffff">WHMARKET</a><br>
       </ol>
    </div>
 	
@@ -30,11 +30,11 @@
    <li><a href='home.php'><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>
       <ul>
-         <li><a href='masterbarang.php'><span>Master Barang</span></a>
+         <li><a href=''><span>Master Barang</span></a>
            
          </li>
 
-         <li><a href=''><span>Master Satuan</span></a>
+         <li><a href='mastersatuan.php'><span>Master Satuan</span></a>
            
          </li>
 
@@ -79,15 +79,27 @@
       
    </div>
    
-   <div class="col-md-10" style="margin-top: 0px; ">
-	<h3><b>Welcome to</b>Aplikasi Warehouse WHMARKET</h3>
-	
-   </div>
+   <div class="col-md-10" style="margin-top: 0px;">
+                    <h2> Master Barang </h2>
+                    <br>
+					<a href="tambah_masterbarang.php" class="btn btn-primary mt-3">Tambah Master Barang</a>
+					<br><br>
+					<table class="table table-bordered mt-3">
+						<thead class="thead-dark">
+							<tr>
+								<th width="5%">No</th>
+								<th>Nama Barang</th>
+								<th>Kategori</th>
+                                <th>Satuan</th>
+                                <th>Kemasan</th>
+								<th>Harga</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						
+			</div>
    
    </div>
-    
-   </div>
-    
     
  </body>
  <html>
