@@ -15,4 +15,16 @@ class HomeController extends Controller
     {
         return view('masterbarang');
     }
+    public function mastersatuan()
+    {
+        return view('mastersatuan');
+    }
+    public function masterkategori()
+    {
+        return view('masterkategori');
+    }
+    public function masterkemasan()
+    {
+        return view('masterkemasan');
+    }
 }
