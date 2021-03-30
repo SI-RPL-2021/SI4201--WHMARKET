@@ -85,7 +85,7 @@
    </div>
    
    <div class="col-md-10" style="margin-top: 0px;">
-                    <h2> Master Kemasan </h2>
+                    <h2>   Master Kemasan </h2>
                     <br>
 					<a href="{{ url('tambah_masterkemasan') }}" class="btn btn-primary mt-3">Tambah Master Kemasan</a>
 					<br><br>
