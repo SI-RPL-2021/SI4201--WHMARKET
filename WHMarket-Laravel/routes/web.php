@@ -41,3 +41,9 @@ Route::post('masterkategori', 'App\Http\Controllers\MasterKategoriController@inp
 Route::get('edit_masterkategori/{id}', 'App\Http\Controllers\MasterKategoriController@updateMasterKategori');
 Route::patch('masterkategori/{id}', 'App\Http\Controllers\MasterKategoriController@updateMasterKategoriProcess');
 Route::delete('masterkategori/{id}', 'App\Http\Controllers\MasterKategoriController@delete');
+
+Route::get('masterbarang', 'App\Http\Controllers\MasterBarangController@data_masterbarang');
+Route::post('masterbarang', 'App\Http\Controllers\MasterBarangController@inputMasterBarang');
+Route::get('edit_masterbarang/{id}', 'App\Http\Controllers\MasterBarangController@updateMasterBarang');
+Route::patch('masterbarang/{id}', 'App\Http\Controllers\MasterBarangController@updateMasterBarangProcess');
+Route::delete('masterbarang/{id}', 'App\Http\Controllers\MasterBarangController@delete');

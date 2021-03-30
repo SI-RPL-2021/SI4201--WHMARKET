@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2021 at 04:58 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Mar 30, 2021 at 04:55 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `whmarket`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `masterbarang`
+--
+
+CREATE TABLE `masterbarang` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_barang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kategori` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `satuan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kemasan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `harga` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `masterbarang`
+--
+
+INSERT INTO `masterbarang` (`id`, `nama_barang`, `kategori`, `satuan`, `kemasan`, `harga`) VALUES
+(2, 'mie', 'makanan', 'kg', 'kardus', 50);
 
 -- --------------------------------------------------------
 
@@ -99,7 +121,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2021_03_29_080322_create_masterkemasan_table', 2),
 (5, '2021_03_29_142307_create_mastersatuan_table', 3),
 (6, '2021_03_29_144306_create_masterkategori_table', 4),
-(7, '2021_03_29_144827_create_masterkategori_table', 5);
+(7, '2021_03_29_144827_create_masterkategori_table', 5),
+(8, '2021_03_30_021735_create_masterbarang_table', 6),
+(9, '2021_03_30_024742_create_masterbarang_table', 7);
 
 -- --------------------------------------------------------
 
@@ -133,6 +157,12 @@ CREATE TABLE `users` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `masterbarang`
+--
+ALTER TABLE `masterbarang`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `masterkategori`
@@ -176,6 +206,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `masterbarang`
+--
+ALTER TABLE `masterbarang`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `masterkategori`
 --
 ALTER TABLE `masterkategori`
@@ -197,7 +233,7 @@ ALTER TABLE `mastersatuan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`

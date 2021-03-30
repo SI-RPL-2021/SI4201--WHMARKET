@@ -87,20 +87,41 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2> Master Barang </h2>
                     <br>
-					<a href="{{ url('tambah_masterbarang') }}" class="btn btn-primary mt-3">Tambah Master Barang</a>
-					<br><br>
-					<table class="table table-bordered mt-3">
-						<thead class="thead-dark">
-							<tr>
-								<th width="5%">No</th>
-								<th>Nama Barang</th>
-								<th>Kategori</th>
-                                <th>Satuan</th>
-                                <th>Kemasan</th>
-								<th>Harga</th>
-								<th>Action</th>
-							</tr>
-						</thead>
+                    <a href="{{ url('tambah_masterbarang') }}" class="btn btn-primary mt-3">Tambah Master Barang</a>
+                    <br><br>
+                    <table class="table table-bordered mt-3">
+                       <thead class="thead-dark">
+                          <tr>
+                             <th width="5%">No</th>
+                             <th>Nama Barang</th>
+                             <th>Kategori</th>
+                             <th>Satuan</th>
+                             <th>Kemasan</th>
+                             <th>Harga</th>
+                             <th>Action</th>
+                          </tr>
+                          @foreach($masterbarang as $item)
+                          <tr>
+                             <td>{{ $loop->iteration }}</td>
+                             <td>{{ $item->nama_barang }}</td>
+                             <td>{{ $item->kategori }}</td>
+                             <td>{{ $item->satuan }}</td>
+                             <td>{{ $item->kemasan }}</td>
+                             <td>{{ $item->harga }}</td>
+                             
+                             <td>
+                             <a href ="{{ url('edit_masterbarang/'.$item->id) }}">
+                             <button type="submit" class="btn btn-primary btn-sm">Edit</button>
+                             </a>
+                             <form action="{{ url('masterbarang/'.$item->id) }}" method="post" class="d-inline">
+                              @method('delete')
+                                @csrf
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                              </form>
+                             </td>
+                       </thead>
+                       @endforeach
+                    </table>
 						
 			</div>
    
