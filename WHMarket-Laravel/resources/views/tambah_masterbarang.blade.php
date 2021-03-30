@@ -86,33 +86,33 @@
    
    <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
    <h2> Tambah Master Barang </h2><br>
-				<form method="post" enctype="multipart/form-data">
-					<div class="form-group">
-						<label>Nama Barang</label>
-						<input type="text" class="form-control" name="nama">
-					</div>
-					<div class="form-group">
-						<label>Kategori</label>
-						<input type="text" class="form-control" name="harga">
-					</div>
-					<div class="form-group">
-						<label>Satuan</label>
-						<input type="text" class="form-control" name="image">
-					</div>
-                    <div class="form-group">
-						<label>Kemasan</label>
-						<input type="text" class="form-control" name="image">
-					</div>
-                    <div class="form-group">
-						<label>Harga</label>
-						<input type="int" class="form-control" name="image">
-					</div>
-
-               <br>
-					
-					<button class="btn btn-primary" type="submit" name="submit">Submit</button>
-                    <button class="btn btn-danger" type="cancel" name="cancel">Cancel</button>
-				</form>
+   <form action="{{ url('masterbarang') }}" method="post" enctype="multipart/form-data">
+      @csrf
+      <div class="form-group">
+         <label>Nama Barang</label>
+         <input type="text" class="form-control" name="nama_barang">
+      </div>
+      <div class="form-group">
+         <label>Kategori</label>
+         <input type="text" class="form-control" name="kategori">
+      </div>
+      <div class="form-group">
+         <label>Satuan</label>
+         <input type="text" class="form-control" name="satuan">
+      </div>
+      <div class="form-group">
+         <label>Kemasan</label>
+         <input type="text" class="form-control" name="kemasan">
+      </div>
+      <div class="form-group">
+         <label>Harga</label>
+         <input type="int" class="form-control" name="harga">
+      </div>
+         <br>
+      
+      <button class="btn btn-primary" type="submit" name="submit">Submit</button>
+      <a href="{{ url('masterbarang') }}" class="btn btn-danger" type="cancel" name="cancel">Cancel</a>
+   </form>
    </div>
    
    </div>
