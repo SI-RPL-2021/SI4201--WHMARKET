@@ -85,7 +85,7 @@
    
    
    <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
-   <h2> Edit Master Satuan </h2><br>
+   <h2>Edit Master Satuan </h2><br>
       <form action="{{ url('mastersatuan/'.$mastersatuan->id) }}" method="post">
           @method('patch')
           @csrf
