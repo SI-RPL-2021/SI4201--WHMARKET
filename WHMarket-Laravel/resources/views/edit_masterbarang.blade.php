@@ -87,33 +87,35 @@
    
    <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
    <h2> Edit Master Barang </h2><br>
-				<form method="post" enctype="multipart/form-data">
+   <form action="{{ url('masterbarang/'.$masterbarang->id) }}" method="post">
+          @method('patch')
+          @csrf
 					<div class="form-group">
 						<label>Nama Barang</label>
-						<input type="text" class="form-control" name="nama">
+						<input type="text" class="form-control" name="nama_barang" value="{{ $masterbarang->nama_barang }}";
 					</div>
-					<div class="form-group">
+               <div class="form-group">
 						<label>Kategori</label>
-						<input type="text" class="form-control" name="harga">
+						<input type="text" class="form-control" name="kategori" value="{{ $masterbarang->kategori }}";
 					</div>
-					<div class="form-group">
+               <div class="form-group">
 						<label>Satuan</label>
-						<input type="text" class="form-control" name="image">
+						<input type="text" class="form-control" name="satuan" value="{{ $masterbarang->satuan }}";
 					</div>
-                    <div class="form-group">
+               <div class="form-group">
 						<label>Kemasan</label>
-						<input type="text" class="form-control" name="image">
+						<input type="text" class="form-control" name="kemasan" value="{{ $masterbarang->kemasan }}";
 					</div>
-                    <div class="form-group">
+               <div class="form-group">
 						<label>Harga</label>
-						<input type="int" class="form-control" name="image">
+						<input type="int" class="form-control" name="nama_barang" value="{{ $masterbarang->harga }}";
 					</div>
-
-               <br>
 					
+               <br>
+   
 					<button class="btn btn-primary" type="submit" name="submit">Save</button>
-                    <button class="btn btn-danger" type="cancel" name="cancel">Cancel</button>
-				</form>
+               <a href="{{ url('masterkategori') }}" class="btn btn-danger" type="cancel" name="cancel">Cancel</a>
+		</form>
    </div>
    
    </div>
