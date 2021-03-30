@@ -23,7 +23,7 @@
 <body>
 
    <div class="row">
-   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:140rem;">
+   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:100%;">
           <li class="active" style="padding-left:8px; "> </li> 
           <font color="#ffffff">WHMARKET</font><br>
       </ol>
@@ -78,7 +78,7 @@
    
  
     <div class="col-md-10" style="padding:0px; ">
-      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:116rem;">
+      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:40%rem;">
       <li> <a class="btn btn-danger my-2 my-sm-0 text-light"  style="font-family: Arial; font-weight: bold;"   href=" ">LOGOUT</a> </li>
           
       </ol>
