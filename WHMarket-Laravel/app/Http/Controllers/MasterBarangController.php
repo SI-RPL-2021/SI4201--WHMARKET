@@ -13,7 +13,7 @@ class MasterBarangController extends Controller
         $masterkemasan = DB::table('masterkemasan')->get();
         $masterkategori = DB::table('masterkategori')->get();
         $mastersatuan = DB::table('mastersatuan')->get();
-        $masterkemasan = DB::table('masterkemasan')->get();
+       
  
         return view('tambah_masterbarang', compact('masterkategori','mastersatuan','masterkemasan') );
     
@@ -39,7 +39,10 @@ class MasterBarangController extends Controller
     public function updateMasterBarang($id)
     {
         $masterbarang = \DB::table('masterbarang')->where('id', $id)->first();
-        return view('edit_masterbarang', compact('masterbarang'));
+        $masterkemasan = \DB::table('masterkemasan')->get();
+        $masterkategori = \DB::table('masterkategori')->get();
+        $mastersatuan = \DB::table('mastersatuan')->get();
+        return view('edit_masterbarang', compact('masterbarang','masterkategori','masterkemasan','mastersatuan'));
     }
     public function updateMasterBarangProcess(Request $request, $id)
     {
