@@ -11,9 +11,14 @@ class MasterBarangController extends Controller
     public function tambah_masterbarang()
     {
         $masterkemasan = DB::table('masterkemasan')->get();
-        // dd($masterkemasan);
-        return view('tambah_masterbarang', compact('masterkemasan') );
+        $masterkategori = DB::table('masterkategori')->get();
+        $mastersatuan = DB::table('mastersatuan')->get();
+        $masterkemasan = DB::table('masterkemasan')->get();
+ 
+        return view('tambah_masterbarang', compact('masterkategori','mastersatuan','masterkemasan') );
+    
     }
+
     public function data_masterbarang()
     {
         $masterbarang = \DB::table('masterbarang')->get();

@@ -110,6 +110,8 @@
 						<label>Harga</label>
 						<input type="int" class="form-control" name="harga" value="{{ $masterbarang->harga }}" required>
 					</div>
+
+               <br>
 					
                <br>
    
