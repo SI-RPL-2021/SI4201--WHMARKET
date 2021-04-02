@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MasterBarangController extends Controller
 {
     //
     public function tambah_masterbarang()
     {
-        return view('tambah_masterbarang');
+        $masterkemasan = DB::table('masterkemasan')->get();
+        // dd($masterkemasan);
+        return view('tambah_masterbarang', compact('masterkemasan') );
     }
     public function data_masterbarang()
     {
