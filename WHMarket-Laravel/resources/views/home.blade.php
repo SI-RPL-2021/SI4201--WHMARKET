@@ -29,10 +29,10 @@
       </ol>
    </div>
 	
-   <div class="col-md-2 colmenu" style="padding:0; background-color:#b3cde0;">
+   <div class="col-md-2 colmenu" style="padding:0; width:100%; background-color:#b3cde0;">
       
-      <div id='cssmenu'>
-<ul style="padding:0; background-color:#b3cde0;"> 
+      <div class="container" id='cssmenu' style="width:100%; padding:0cm;" >
+<ul>
    <li><a href="{{ url('home') }}"><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>
       <ul>
@@ -51,7 +51,7 @@
            
          </li>
       </ul>
-      <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Manajemen Gudang</a>
+      <li class='active has-sub'><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Manajemen Gudang</a>
       <ul>
          <li><a href="{{ url('data_stokbarang') }}"><span>Data Stok Barang</span></a>
            
@@ -77,8 +77,8 @@
    </div>
    
  
-    <div class="col-md-10" style="padding:0px; ">
-      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:40%rem;">
+    <div class="col-md-10" style="padding-left:0cm; ">
+      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:103.3%; ">
       <li> <a class="btn btn-danger my-2 my-sm-0 text-light"  style="font-family: Arial; font-weight: bold;"   href=" ">LOGOUT</a> </li>
           
       </ol>
@@ -89,6 +89,8 @@
    <div class="col-md-10" style="margin-top: 0px; ">
 	<h3><b>Welcome to</b>, Aplikasi Warehouse WHMARKET</h3>
    
+   <img src="/assets/img/img_home.png" width="700" height="400">
+
    </div>
 	
    </div>

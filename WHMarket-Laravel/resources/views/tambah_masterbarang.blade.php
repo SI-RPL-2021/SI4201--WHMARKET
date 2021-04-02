@@ -102,7 +102,11 @@
       </div>
       <div class="form-group">
          <label>Kemasan</label>
-         <input type="text" class="form-control" name="kemasan">
+         <select name="kemasan" id="kemasan" class="form-control">
+         @foreach ($masterkemasan as $item)
+         <option value="{{$item->nama_kemasan}}">{{$item->nama_kemasan}}</option>
+         @endforeach
+         </select>
       </div>
       <div class="form-group">
          <label>Harga</label>
