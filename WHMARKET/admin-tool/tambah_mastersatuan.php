@@ -17,7 +17,7 @@
 <body>
 
    <div class="row">
-   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:140rem;">
+   <ol class="breadcrumb"  style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:140rem;">
           <li class="active" style="padding-left:8px; "> </li> 
           <font color="#ffffff">WHMARKET</font><br>
       </ol>
