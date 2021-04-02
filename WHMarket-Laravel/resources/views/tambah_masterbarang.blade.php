@@ -21,15 +21,15 @@
 <body>
 
    <div class="row">
-   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:140rem;">
+      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:100%;">
           <li class="active" style="padding-left:8px; "> </li> 
           <font color="#ffffff">WHMARKET</font><br>
       </ol>
    </div>
 	
-   <div class="col-md-2 colmenu" style="padding:0; background-color:#b3cde0;">
+   <div class="col-md-2 colmenu" style="padding:0; width:100%; height:20cm; background-color:#b3cde0;">
       
-      <div id='cssmenu'>
+      <div class="container" id='cssmenu' style="width:100%; padding:0cm;" >
 <ul style="padding:0; background-color:#b3cde0;"> 
 <li><a href="{{ url('home') }}"><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>
@@ -75,8 +75,8 @@
    </div>
    
  
-    <div class="col-md-10" style="padding:0px; ">
-      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:116rem;">
+   <div class="col-md-10" style="padding-left:0cm; ">
+      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:103.3%; ">
       <li> <a class="btn btn-danger my-2 my-sm-0 text-light"  style="font-family: Arial; font-weight: bold;"   href=" ">LOGOUT</a> </li>
           
       </ol>
@@ -84,7 +84,7 @@
    </div>
    
    
-   <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
+   <div class="col-md-10" style="width: 20cm; padding-left: 3cm;">
    <h2> Tambah Master Barang </h2><br>
    <form action="{{ url('masterbarang') }}" method="post" enctype="multipart/form-data">
       @csrf
@@ -94,15 +94,27 @@
       </div>
       <div class="form-group">
          <label>Kategori</label>
-         <input type="text" class="form-control" name="kategori">
+         <select name="kategori" id="satuan" class="form-control">
+         @foreach ($masterkategori as $item)
+         <option value="{{$item->nama_kategori}}">{{$item->nama_kategori}}</option>
+         @endforeach
+         </select>
       </div>
       <div class="form-group">
          <label>Satuan</label>
-         <input type="text" class="form-control" name="satuan">
+         <select name="satuan" id="satuan" class="form-control">
+         @foreach ($mastersatuan as $item)
+         <option value="{{$item->nama_satuan}}">{{$item->nama_satuan}}</option>
+         @endforeach
+         </select>
       </div>
       <div class="form-group">
          <label>Kemasan</label>
-         <input type="text" class="form-control" name="kemasan">
+         <select name="kemasan" id="kemasan" class="form-control">
+         @foreach ($masterkemasan as $item)
+         <option value="{{$item->nama_kemasan}}">{{$item->nama_kemasan}}</option>
+         @endforeach
+         </select>
       </div>
       <div class="form-group">
          <label>Harga</label>

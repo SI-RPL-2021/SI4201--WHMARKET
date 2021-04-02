@@ -1,11 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2021 at 04:55 AM
+
+-- Generation Time: Apr 02, 2021 at 11:46 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,28 +26,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `masterbarang`
---
 
-CREATE TABLE `masterbarang` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nama_barang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kategori` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `satuan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `kemasan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `harga` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `masterbarang`
---
-
-INSERT INTO `masterbarang` (`id`, `nama_barang`, `kategori`, `satuan`, `kemasan`, `harga`) VALUES
-(2, 'mie', 'makanan', 'kg', 'kardus', 50);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `masterkategori`
 --
 
@@ -59,7 +40,21 @@ CREATE TABLE `masterkategori` (
 --
 
 INSERT INTO `masterkategori` (`id`, `nama_kategori`) VALUES
-(2, 'minuman');
+(3, 'Makanan'),
+(4, 'Minuman'),
+(5, 'Buku'),
+(6, 'Sabun Mandi'),
+(7, 'Sampo'),
+(8, 'Sikat Gigi'),
+(9, 'Pasta Gigi'),
+(10, 'Alat Tulis'),
+(13, 'Deterjen'),
+(14, 'Pengharum Ruangan'),
+(15, 'Lampu'),
+(16, 'Obat Nyamuk'),
+(17, 'Kapur Barus'),
+(18, 'Rokok'),
+(19, 'Sabun Cuci Piring');
 
 -- --------------------------------------------------------
 
@@ -78,7 +73,13 @@ CREATE TABLE `masterkemasan` (
 
 INSERT INTO `masterkemasan` (`id`, `nama_kemasan`) VALUES
 (1, 'Plastik'),
-(5, 'Botol');
+(5, 'Botol'),
+(10, 'Kaleng'),
+(11, 'Kayu'),
+(12, 'Kardus'),
+(13, 'Kertas'),
+(14, 'Kaca'),
+(15, 'Styrofoam');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,21 @@ CREATE TABLE `mastersatuan` (
 --
 
 INSERT INTO `mastersatuan` (`id`, `nama_satuan`) VALUES
-(1, 'Kilo');
+(1, 'Kilogram (Kg)'),
+(3, 'Pieces (pcs)'),
+(4, 'Lembar'),
+(5, 'Meter'),
+(6, 'Unit'),
+(7, 'Roll'),
+(8, 'Dus'),
+(9, 'Karung'),
+(10, 'Kaleng'),
+(11, 'Gulung'),
+(12, 'Set'),
+(13, 'Pasang'),
+(14, 'Botol'),
+(15, 'Bungkus'),
+(16, 'Gram (gr)');
 
 -- --------------------------------------------------------
 
@@ -121,9 +136,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2021_03_29_080322_create_masterkemasan_table', 2),
 (5, '2021_03_29_142307_create_mastersatuan_table', 3),
 (6, '2021_03_29_144306_create_masterkategori_table', 4),
+
 (7, '2021_03_29_144827_create_masterkategori_table', 5),
-(8, '2021_03_30_021735_create_masterbarang_table', 6),
-(9, '2021_03_30_024742_create_masterbarang_table', 7);
+(8, '2021_03_30_024742_create_masterbarang_table', 6);
+
 
 -- --------------------------------------------------------
 
@@ -157,12 +173,6 @@ CREATE TABLE `users` (
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `masterbarang`
---
-ALTER TABLE `masterbarang`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `masterkategori`
@@ -206,34 +216,39 @@ ALTER TABLE `users`
 --
 
 --
+
 -- AUTO_INCREMENT for table `masterbarang`
 --
 ALTER TABLE `masterbarang`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
+
 -- AUTO_INCREMENT for table `masterkategori`
 --
 ALTER TABLE `masterkategori`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `masterkemasan`
 --
 ALTER TABLE `masterkemasan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `mastersatuan`
 --
 ALTER TABLE `mastersatuan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+
 
 --
 -- AUTO_INCREMENT for table `users`
