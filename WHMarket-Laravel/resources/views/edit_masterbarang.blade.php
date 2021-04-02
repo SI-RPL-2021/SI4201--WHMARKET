@@ -22,16 +22,16 @@
 <body>
 
    <div class="row">
-   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:140rem;">
+   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:100%;">
           <li class="active" style="padding-left:8px; "> </li> 
           <font color="#ffffff">WHMARKET</font><br>
       </ol>
    </div>
 	
-   <div class="col-md-2 colmenu" style="padding:0; background-color:#b3cde0;">
+   <div class="col-md-2 colmenu" style="padding:0; width:100%; background-color:#b3cde0;">
       
-      <div id='cssmenu'>
-<ul style="padding:0; background-color:#b3cde0;"> 
+      <div class="container" id='cssmenu' style="width:100%; padding:0cm;" >
+<ul> 
 <li><a href="{{ url('home') }}"><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>
       <ul>
@@ -76,8 +76,8 @@
    </div>
    
  
-    <div class="col-md-10" style="padding:0px; ">
-      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:116rem;">
+   <div class="col-md-10" style="padding-left:0cm; ">
+      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:103.3%; ">
       <li> <a class="btn btn-danger my-2 my-sm-0 text-light"  style="font-family: Arial; font-weight: bold;"   href=" ">LOGOUT</a> </li>
           
       </ol>
@@ -85,35 +85,39 @@
    </div>
    
    
-   <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
+   <div class="col-md-10" style="width: 20cm; padding-left: 3cm;">
    <h2> Edit Master Barang </h2><br>
-				<form method="post" enctype="multipart/form-data">
+   <form action="{{ url('masterbarang/'.$masterbarang->id) }}" method="post">
+          @method('patch')
+          @csrf
 					<div class="form-group">
 						<label>Nama Barang</label>
-						<input type="text" class="form-control" name="nama">
+						<input type="text" class="form-control" name="nama_barang" value="{{ $masterbarang->nama_barang }}" required>
 					</div>
-					<div class="form-group">
+               <div class="form-group">
 						<label>Kategori</label>
-						<input type="text" class="form-control" name="harga">
+						<input type="text" class="form-control" name="kategori" value="{{ $masterbarang->kategori }}" required>
 					</div>
-					<div class="form-group">
+               <div class="form-group">
 						<label>Satuan</label>
-						<input type="text" class="form-control" name="image">
+						<input type="text" class="form-control" name="satuan" value="{{ $masterbarang->satuan }}" required>
 					</div>
-                    <div class="form-group">
+               <div class="form-group">
 						<label>Kemasan</label>
-						<input type="text" class="form-control" name="image">
+						<input type="text" class="form-control" name="kemasan" value="{{ $masterbarang->kemasan }}" required>
 					</div>
-                    <div class="form-group">
+               <div class="form-group">
 						<label>Harga</label>
-						<input type="int" class="form-control" name="image">
+						<input type="int" class="form-control" name="harga" value="{{ $masterbarang->harga }}" required>
 					</div>
 
                <br>
 					
+               <br>
+   
 					<button class="btn btn-primary" type="submit" name="submit">Save</button>
-                    <button class="btn btn-danger" type="cancel" name="cancel">Cancel</button>
-				</form>
+               <a href="{{ url('masterkategori') }}" class="btn btn-danger" type="cancel" name="cancel">Cancel</a>
+		</form>
    </div>
    
    </div>
