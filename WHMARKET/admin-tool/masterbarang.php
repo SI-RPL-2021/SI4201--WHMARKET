@@ -94,7 +94,7 @@
 								<th>Kategori</th>
                                 <th>Satuan</th>
                                 <th>Kemasan</th>
-								<th>Harga</th>
+								<th>Harga (Rp)</th>
 								<th>Action</th>
 							</tr>
 						</thead>

@@ -117,7 +117,7 @@
          </select>
       </div>
       <div class="form-group">
-         <label>Harga</label>
+         <label>Harga (Rp) </label>
          <input type="int" class="form-control" name="harga"required>
       </div>
          <br>
