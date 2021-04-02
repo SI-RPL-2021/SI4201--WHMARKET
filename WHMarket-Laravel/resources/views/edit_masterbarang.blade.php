@@ -92,23 +92,23 @@
           @csrf
 					<div class="form-group">
 						<label>Nama Barang</label>
-						<input type="text" class="form-control" name="nama_barang" value="{{ $masterbarang->nama_barang }}";
+						<input type="text" class="form-control" name="nama_barang" value="{{ $masterbarang->nama_barang }}" required>
 					</div>
                <div class="form-group">
 						<label>Kategori</label>
-						<input type="text" class="form-control" name="kategori" value="{{ $masterbarang->kategori }}";
+						<input type="text" class="form-control" name="kategori" value="{{ $masterbarang->kategori }}" required>
 					</div>
                <div class="form-group">
 						<label>Satuan</label>
-						<input type="text" class="form-control" name="satuan" value="{{ $masterbarang->satuan }}";
+						<input type="text" class="form-control" name="satuan" value="{{ $masterbarang->satuan }}" required>
 					</div>
                <div class="form-group">
 						<label>Kemasan</label>
-						<input type="text" class="form-control" name="kemasan" value="{{ $masterbarang->kemasan }}";
+						<input type="text" class="form-control" name="kemasan" value="{{ $masterbarang->kemasan }}" required>
 					</div>
                <div class="form-group">
 						<label>Harga</label>
-						<input type="int" class="form-control" name="nama_barang" value="{{ $masterbarang->harga }}";
+						<input type="int" class="form-control" name="harga" value="{{ $masterbarang->harga }}" required>
 					</div>
 					
                <br>
