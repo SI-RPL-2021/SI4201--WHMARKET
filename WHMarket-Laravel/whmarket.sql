@@ -3,9 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2021 at 09:51 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+
+-- Generation Time: Apr 02, 2021 at 11:46 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +26,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+
 -- Table structure for table `masterkategori`
 --
 
@@ -70,7 +73,13 @@ CREATE TABLE `masterkemasan` (
 
 INSERT INTO `masterkemasan` (`id`, `nama_kemasan`) VALUES
 (1, 'Plastik'),
-(5, 'Botol');
+(5, 'Botol'),
+(10, 'Kaleng'),
+(11, 'Kayu'),
+(12, 'Kardus'),
+(13, 'Kertas'),
+(14, 'Kaca'),
+(15, 'Styrofoam');
 
 -- --------------------------------------------------------
 
@@ -127,7 +136,10 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2021_03_29_080322_create_masterkemasan_table', 2),
 (5, '2021_03_29_142307_create_mastersatuan_table', 3),
 (6, '2021_03_29_144306_create_masterkategori_table', 4),
-(7, '2021_03_29_144827_create_masterkategori_table', 5);
+
+(7, '2021_03_29_144827_create_masterkategori_table', 5),
+(8, '2021_03_30_024742_create_masterbarang_table', 6);
+
 
 -- --------------------------------------------------------
 
@@ -204,6 +216,14 @@ ALTER TABLE `users`
 --
 
 --
+
+-- AUTO_INCREMENT for table `masterbarang`
+--
+ALTER TABLE `masterbarang`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+
 -- AUTO_INCREMENT for table `masterkategori`
 --
 ALTER TABLE `masterkategori`
@@ -213,7 +233,7 @@ ALTER TABLE `masterkategori`
 -- AUTO_INCREMENT for table `masterkemasan`
 --
 ALTER TABLE `masterkemasan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `mastersatuan`
@@ -225,7 +245,10 @@ ALTER TABLE `mastersatuan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+
 
 --
 -- AUTO_INCREMENT for table `users`
