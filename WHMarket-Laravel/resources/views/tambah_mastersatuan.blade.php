@@ -21,15 +21,15 @@
 <body>
 
    <div class="row">
-   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:140rem;">
+   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:100%;">
           <li class="active" style="padding-left:8px; "> </li> 
           <font color="#ffffff">WHMARKET</font><br>
       </ol>
    </div>
 	
-   <div class="col-md-2 colmenu" style="padding:0; background-color:#b3cde0;">
+   <div class="col-md-2 colmenu" style="padding:0; width:100%; background-color:#b3cde0;">
       
-      <div id='cssmenu'>
+      <div class="container" id='cssmenu' style="width:100%; padding:0cm;" >
 <ul style="padding:0; background-color:#b3cde0;"> 
 <li><a href="{{ url('home') }}"><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>
@@ -75,8 +75,8 @@
    </div>
    
  
-    <div class="col-md-10" style="padding:0px; ">
-      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:116rem;">
+   <div class="col-md-10" style="padding-left:0cm; ">
+      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:103.3%; ">
       <li> <a class="btn btn-danger my-2 my-sm-0 text-light"  style="font-family: Arial; font-weight: bold;"   href=" ">LOGOUT</a> </li>
           
       </ol>
@@ -84,7 +84,7 @@
    </div>
    
    
-   <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
+   <div class="col-md-10" style="width: 20cm; padding-left: 3cm;">
    <h2>Tambah Master Satuan </h2><br>
             <form action="{{ url('mastersatuan') }}" method="post" enctype="multipart/form-data">
                @csrf
