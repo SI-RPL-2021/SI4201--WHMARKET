@@ -85,7 +85,7 @@
    </div>
    
    
-   <div class="col-md-10" style="width: 25cm; padding-left: 5cm;">
+   <div class="col-md-10" style="width: 20cm; padding-left: 3cm;">
    <h2>  Tambah Master Kemasan </h2><br>
             <form action="{{ url('masterkemasan') }}" method="post" enctype="multipart/form-data">
                @csrf

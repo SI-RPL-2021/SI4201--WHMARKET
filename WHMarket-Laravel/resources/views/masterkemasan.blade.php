@@ -22,15 +22,15 @@
 <body>
 
    <div class="row">
-   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:140rem;">
+      <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:100%;">
           <li class="active" style="padding-left:8px; "> </li> 
           <font color="#ffffff">WHMARKET</font><br>
       </ol>
    </div>
 	
-   <div class="col-md-2 colmenu" style="padding:0; background-color:#b3cde0;">
+   <div class="col-md-2 colmenu" style="padding:0; width:100%; height:18cm;background-color:#b3cde0;">
       
-      <div id='cssmenu'>
+      <div class="container" id='cssmenu' style="width:100%; padding:0cm;" >
 <ul style="padding:0; background-color:#b3cde0;"> 
 <li><a href="{{ url('home') }}"><i class="fa fa-home fa-fw" ></i>&nbsp; Home</a></li>
    <li class='active has-sub' ><a href='#'><i class="fa fa-archive fa-fw"></i>&nbsp; Master</a>

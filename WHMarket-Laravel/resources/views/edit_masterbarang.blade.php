@@ -108,7 +108,7 @@
 					</div>
                <div class="form-group">
 						<label>Harga</label>
-						<input type="int" class="form-control" name="nama_barang" value="{{ $masterbarang->harga }}";
+						<input type="int" class="form-control" name="harga" value="{{ $masterbarang->harga }}";
 					</div>
 
                <br>
