@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2021 at 09:51 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Apr 02, 2021 at 11:46 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,47 @@ SET time_zone = "+00:00";
 --
 -- Database: `whmarket`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `masterbarang`
+--
+
+CREATE TABLE `masterbarang` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_barang` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kategori` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `satuan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kemasan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `harga` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `masterbarang`
+--
+
+INSERT INTO `masterbarang` (`id`, `nama_barang`, `kategori`, `satuan`, `kemasan`, `harga`) VALUES
+(3, 'Lampu LED Philips 3 Watt Putih', 'Lampu', 'Pieces (pcs)', 'Kardus', 20000),
+(4, 'Sampoerna Mild', 'Rokok', 'Pieces (pcs)', 'Kertas', 30000),
+(5, 'Mie sedaap instant goreng', 'Makanan', 'Pieces (pcs)', 'Plastik', 3000),
+(6, 'Aqua Gelas Mineral 220ml 48pcs', 'Minuman', 'Dus', 'Kardus', 40000),
+(7, 'Buku Tulis Campus B5 50 lembar', 'Buku', 'piecies (pcs)', 'Kertas', 5000),
+(8, 'Dove Body Wash Deeply Nourishing refill 850 ml', 'Sabun Mandi', 'pieces (pcs)', 'Plastik', 45000),
+(9, 'Sensodyne Sensitif Pasta Gigi 100gr', 'Sikat Gigi', 'Pieces (pcs)', 'Kertas', 20000),
+(10, 'Joyko Pulpen Gel Jk100 Warna Hitam', 'Alat Tulis', 'Pieces (pcs)', 'Plastik', 13000),
+(11, 'Molto Ultra Pure Softtener Pakaian 720ml', 'Deterjen', 'Pieces (pcs)', 'Plastik', 28000),
+(12, 'Glade Aerosol Elegant Vanilla 350ml', 'Pengharum Ruangan', 'Pieces (pcs)', 'Kaleng', 26000),
+(13, 'HIT Besar Spray Blossom 600ml', 'Obat Nyamuk', 'Pieces (pcs)', 'Kaleng', 27000),
+(14, 'Kapur Barus Swallow Bulat Isi 5bola', 'Kapur Barus', 'Pieces (pcs)', 'Plastik', 18000),
+(15, 'SOS Cairan Pencuci Piring Refill 750ml', 'Sabun Cuci Piring', 'Pieces (pcs)', 'Plastik', 90000),
+(16, 'Head & Shoulders Shampoo Smooth & Silky 400ml', 'Sampo', 'Pieces (pcs)', 'Plastik', 48000),
+(17, 'Oral-B Sikat Gigi UltraThin Black Tea 3s [P&G]', 'Sikat Gigi', 'Pieces (pcs)', 'Plastik', 32000),
+(18, 'Soyjoy Snack Cemilan Gluten', 'Makanan', 'Pieces (pcs)', 'Plastik', 10000),
+(19, 'Coolant Lychee 350ml', 'Minuman', 'Pieces (pcs)', 'Botol', 4000),
+(20, 'Marlboro Red Rokok (20batang)', 'Rokok', 'Pieces (pcs)', 'Plastik', 35000),
+(21, 'Lays Rumput Laut 68gram', 'Makanan', 'Pieces (pcs)', 'Plastik', 9000),
+(22, 'Good Day Moccacino 250ml', 'Minuman', 'Pieces (pcs)', 'Botol', 5000);
 
 -- --------------------------------------------------------
 
@@ -70,7 +111,13 @@ CREATE TABLE `masterkemasan` (
 
 INSERT INTO `masterkemasan` (`id`, `nama_kemasan`) VALUES
 (1, 'Plastik'),
-(5, 'Botol');
+(5, 'Botol'),
+(10, 'Kaleng'),
+(11, 'Kayu'),
+(12, 'Kardus'),
+(13, 'Kertas'),
+(14, 'Kaca'),
+(15, 'Styrofoam');
 
 -- --------------------------------------------------------
 
@@ -127,7 +174,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (4, '2021_03_29_080322_create_masterkemasan_table', 2),
 (5, '2021_03_29_142307_create_mastersatuan_table', 3),
 (6, '2021_03_29_144306_create_masterkategori_table', 4),
-(7, '2021_03_29_144827_create_masterkategori_table', 5);
+(7, '2021_03_29_144827_create_masterkategori_table', 5),
+(8, '2021_03_30_024742_create_masterbarang_table', 6);
 
 -- --------------------------------------------------------
 
@@ -161,6 +209,12 @@ CREATE TABLE `users` (
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `masterbarang`
+--
+ALTER TABLE `masterbarang`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `masterkategori`
@@ -204,6 +258,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `masterbarang`
+--
+ALTER TABLE `masterbarang`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
 -- AUTO_INCREMENT for table `masterkategori`
 --
 ALTER TABLE `masterkategori`
@@ -213,7 +273,7 @@ ALTER TABLE `masterkategori`
 -- AUTO_INCREMENT for table `masterkemasan`
 --
 ALTER TABLE `masterkemasan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `mastersatuan`
@@ -225,7 +285,7 @@ ALTER TABLE `mastersatuan`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
