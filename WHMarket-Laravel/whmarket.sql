@@ -1,5 +1,5 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
-
 -- Table structure for table `masterkategori`
 --
 
@@ -175,6 +174,12 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `masterbarang`
+--
+ALTER TABLE `masterbarang`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `masterkategori`
 --
 ALTER TABLE `masterkategori`
@@ -216,14 +221,12 @@ ALTER TABLE `users`
 --
 
 --
-
 -- AUTO_INCREMENT for table `masterbarang`
 --
 ALTER TABLE `masterbarang`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
-
 -- AUTO_INCREMENT for table `masterkategori`
 --
 ALTER TABLE `masterkategori`

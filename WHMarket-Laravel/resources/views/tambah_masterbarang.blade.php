@@ -27,7 +27,7 @@
       </ol>
    </div>
 	
-   <div class="col-md-2 colmenu" style="padding:0; width:100%; height:20cm; background-color:#b3cde0;">
+   <div class="col-md-2 colmenu" style="padding:0; width:100%; height:18cm; background-color:#b3cde0;">
       
       <div class="container" id='cssmenu' style="width:100%; padding:0cm;" >
 <ul style="padding:0; background-color:#b3cde0;"> 
@@ -90,7 +90,7 @@
       @csrf
       <div class="form-group">
          <label>Nama Barang</label>
-         <input type="text" class="form-control" name="nama_barang">
+         <input type="text" class="form-control" name="nama_barang"required>
       </div>
       <div class="form-group">
          <label>Kategori</label>
@@ -117,8 +117,8 @@
          </select>
       </div>
       <div class="form-group">
-         <label>Harga</label>
-         <input type="int" class="form-control" name="harga">
+         <label>Harga (Rp) </label>
+         <input type="int" class="form-control" name="harga"required>
       </div>
          <br>
       

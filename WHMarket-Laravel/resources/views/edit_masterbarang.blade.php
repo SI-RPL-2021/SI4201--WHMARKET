@@ -96,18 +96,30 @@
 					</div>
                <div class="form-group">
 						<label>Kategori</label>
-						<input type="text" class="form-control" name="kategori" value="{{ $masterbarang->kategori }}" required>
+						<select name="kategori" id="kategori" class="form-control">
+                  @foreach ($masterkategori as $item)
+                   <option value="{{ $item->nama_kategori }}" {{$masterbarang->kategori == $item->nama_kategori ? "selected" : null}}>{{ $item->nama_kategori }}</option>
+                  @endforeach
+                  </select>
 					</div>
                <div class="form-group">
 						<label>Satuan</label>
-						<input type="text" class="form-control" name="satuan" value="{{ $masterbarang->satuan }}" required>
+						<select name="satuan" id="satuan" class="form-control">
+                  @foreach ($mastersatuan as $item)
+                   <option value="{{ $item->nama_satuan }}" {{$masterbarang->satuan == $item->nama_satuan ? "selected" : null}}>{{ $item->nama_satuan }}</option>
+                  @endforeach
+                  </select>
 					</div>
                <div class="form-group">
 						<label>Kemasan</label>
-						<input type="text" class="form-control" name="kemasan" value="{{ $masterbarang->kemasan }}" required>
+						<select name="kemasan" id="kemasan" class="form-control">
+                  @foreach ($masterkemasan as $item)
+                   <option value="{{ $item->nama_kemasan }}" {{$masterbarang->kemasan == $item->nama_kemasan ? "selected" : null}}>{{ $item->nama_kemasan }}</option>
+                  @endforeach
+                   </select>
 					</div>
                <div class="form-group">
-						<label>Harga</label>
+						<label>Harga (Rp)</label>
 						<input type="int" class="form-control" name="harga" value="{{ $masterbarang->harga }}" required>
 					</div>
 
@@ -116,7 +128,7 @@
                <br>
    
 					<button class="btn btn-primary" type="submit" name="submit">Save</button>
-               <a href="{{ url('masterkategori') }}" class="btn btn-danger" type="cancel" name="cancel">Cancel</a>
+               <a href="{{ url('masterbarang') }}" class="btn btn-danger" type="cancel" name="cancel">Cancel</a>
 		</form>
    </div>
    
