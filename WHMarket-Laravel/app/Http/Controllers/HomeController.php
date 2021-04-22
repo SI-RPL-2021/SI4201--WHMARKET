@@ -27,4 +27,8 @@ class HomeController extends Controller
     {
         return view('masterkemasan');
     }
+    public function data_stokbarang()
+    {
+        return view('data_stokbarang');
+    }
 }
