@@ -26,6 +26,7 @@ Route::get('tambah_mastersatuan', 'App\Http\Controllers\MasterSatuanController@t
 Route::get('tambah_masterkategori', 'App\Http\Controllers\MasterKategoriController@tambah_masterkategori');
 Route::get('tambah_masterkemasan', 'App\Http\Controllers\MasterKemasanController@tambah_masterkemasan');
 Route::get('tambah_data_stokbarang', 'App\Http\Controllers\DataStokBarangController@tambah_data_stokbarang');
+Route::get('tambah_data_barangmasuk', 'App\Http\Controllers\BarangMasukController@tambah_data_barangmasuk');
 
 Route::get('masterkemasan', 'App\Http\Controllers\MasterKemasanController@data_masterkemasan');
 Route::post('masterkemasan', 'App\Http\Controllers\MasterKemasanController@inputMasterKemasan');
@@ -56,4 +57,7 @@ Route::post('data_stokbarang', 'App\Http\Controllers\DataStokBarangController@In
 Route::delete('data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@delete');
 
 Route::get('data_barangmasuk', 'App\Http\Controllers\BarangMasukController@data_barangmasuk');
+Route::post('data_barangmasuk', 'App\Http\Controllers\BarangMasukController@InputDataBarangMasuk');
+Route::get('edit_data_barangmasuk/{id}', 'App\Http\Controllers\BarangMasukController@updateDataBarangMasuk');
+Route::patch('data_barangmasuk/{id}', 'App\Http\Controllers\BarangMasukController@updateDataBarangMasuk');
 Route::delete('data_barangmasuk/{id}', 'App\Http\Controllers\BarangMasukController@delete');
