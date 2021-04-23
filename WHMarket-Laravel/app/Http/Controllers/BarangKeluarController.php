@@ -7,7 +7,11 @@ use Illuminate\Http\Request;
 class BarangKeluarController extends Controller
 {
     //
-
+    public function data_barangkeluar()
+    {
+        $data_barangkeluar = \DB::table('data_barangkeluar')->get();
+        return view('data_barangkeluar', ['data_barangkeluar' => $data_barangkeluar]);
+    }
     public function tambah_data_barangkeluar()
     {
         $masterbarang = \DB::table('masterbarang')->get();
@@ -53,6 +57,10 @@ class BarangKeluarController extends Controller
         ]);
         return redirect('data_barangkeluar');
     }
-
+    public function delete($id)
+    {
+        \DB::table('data_barangkeluar')->where('id', $id)->delete();
+        return redirect('data_barangkeluar');
+    }
 
 }
