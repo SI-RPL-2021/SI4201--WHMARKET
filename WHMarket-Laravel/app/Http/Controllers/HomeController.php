@@ -39,4 +39,8 @@ class HomeController extends Controller
     {
         return view('data_barangkeluar');
     }
+    public function pemeriksaanbarang()
+    {
+        return view('pemeriksaanbarang');
+    }
 }
