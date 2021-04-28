@@ -58,6 +58,8 @@ Route::delete('masterbarang/{id}', 'App\Http\Controllers\MasterBarangController@
 
 Route::get('data_stokbarang', 'App\Http\Controllers\DataStokBarangController@data_stokbarang');
 Route::post('data_stokbarang', 'App\Http\Controllers\DataStokBarangController@InputDataStokBarang');
+Route::get('edit_data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@updateDataStokBarang');
+Route::patch('data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@updateDataStokBarangProcess');
 Route::delete('data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@delete');
 
 Route::get('data_barangmasuk', 'App\Http\Controllers\BarangMasukController@data_barangmasuk');

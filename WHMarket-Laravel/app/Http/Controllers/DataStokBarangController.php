@@ -9,32 +9,22 @@ class DataStokBarangController extends Controller
     //
     public function data_stokbarang()
     {
-        $data_stokbarang = \DB::table('data_stokbarang')->get();
-        return view('data_stokbarang', ['data_stokbarang' => $data_stokbarang]);
-    }
-    public function tambah_data_stokbarang()
-    {
         $masterbarang = \DB::table('masterbarang')->get();
-        $masterkategori = \DB::table('masterkategori')->get();
-        $mastersatuan = \DB::table('mastersatuan')->get();
-        $masterkemasan = \DB::table('masterkemasan')->get();
-       
- 
-        return view('tambah_data_stokbarang', compact('masterbarang','masterkategori','mastersatuan','masterkemasan') );
-    
+        return view('data_stokbarang', ['masterbarang' => $masterbarang]);
     }
-    public function inputDataStokBarang(Request $request)
+    public function updateDataStokBarang($id)
     {
-        
-        \DB::table('data_stokbarang')->insert([
-            'nama_barang' => $request->nama_barang,
-            'kategori' => $request->kategori,
-            'satuan' => $request->satuan,
-            'kemasan' => $request->kemasan,
-            'harga' => $request->harga,
+        $masterbarang = \DB::table('masterbarang')->where('id', $id)->first();
+        return view('edit_data_stokbarang', ['masterbarang' => $masterbarang]);
+    }
+    public function updateDataStokBarangProcess(Request $request, $id)
+    {
+        \DB::table('masterbarang')->where('id', $id)
+        ->update([
+            
             'stok' => $request->stok
-            ]);
-            return redirect('data_stokbarang');
+        ]);
+        return redirect('data_stokbarang');
     }
     public function delete($id)
     {
