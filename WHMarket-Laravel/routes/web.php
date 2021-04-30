@@ -65,13 +65,13 @@ Route::delete('data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangContro
 Route::get('data_barangmasuk', 'App\Http\Controllers\BarangMasukController@data_barangmasuk');
 Route::post('data_barangmasuk', 'App\Http\Controllers\BarangMasukController@InputDataBarangMasuk');
 Route::get('edit_data_barangmasuk/{id}', 'App\Http\Controllers\BarangMasukController@updateDataBarangMasuk');
-Route::patch('data_barangmasuk/{id}', 'App\Http\Controllers\BarangMasukController@updateDataBarangMasuk');
+Route::patch('data_barangmasuk/{id}', 'App\Http\Controllers\BarangMasukController@updateDataBarangMasukProcess');
 Route::delete('data_barangmasuk/{id}', 'App\Http\Controllers\BarangMasukController@delete');
 
 Route::get('data_barangkeluar', 'App\Http\Controllers\BarangKeluarController@data_barangkeluar');
 Route::post('data_barangkeluar', 'App\Http\Controllers\BarangKeluarController@InputDataBarangKeluar');
 Route::get('edit_data_barangkeluar/{id}', 'App\Http\Controllers\BarangKeluarController@updateDataBarangKeluar');
-Route::patch('data_barangkeluar/{id}', 'App\Http\Controllers\BarangKeluarController@updateDataBarangKeluar');
+Route::patch('data_barangkeluar/{id}', 'App\Http\Controllers\BarangKeluarController@updateDataBarangKeluarProcess');
 Route::delete('data_barangkeluar/{id}', 'App\Http\Controllers\BarangKeluarController@delete');
 
 Route::get('pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangController@pemeriksaanbarang');

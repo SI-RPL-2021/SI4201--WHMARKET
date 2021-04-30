@@ -87,13 +87,13 @@
    
    <div class="col-md-10" style="width: 20cm; padding-left: 3cm;">
    <h2> Edit Data Stok Barang</h2><br>
-   <form action="{{ url('masterbarang/'.$masterbarang->id) }}" method="post">
+   <form action="{{ url('data_stokbarang/'.$stokbarang->id) }}" method="post">
           @method('patch')
           @csrf
           
                     <div class="form-group">
 						<label>Stok</label>
-						<input type="int" class="form-control" name="stok" value="{{ $masterbarang->stok }}" required>
+						<input type="int" class="form-control" name="stok" value="{{ $stokbarang->stok }}" required>
 					</div>
                <br>
 					
