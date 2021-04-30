@@ -20,6 +20,7 @@ class CreateMasterbarangTable extends Migration
             $table->string('satuan');
             $table->string('kemasan');
             $table->integer('harga');  
+            $table->integer('stok');  
         });
     }
 
