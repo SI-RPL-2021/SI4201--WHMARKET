@@ -31,7 +31,6 @@ Route::get('tambah_data_stokbarang', 'App\Http\Controllers\DataStokBarangControl
 Route::get('tambah_data_barangmasuk', 'App\Http\Controllers\BarangMasukController@tambah_data_barangmasuk');
 Route::get('tambah_data_barangkeluar', 'App\Http\Controllers\BarangKeluarController@tambah_data_barangkeluar');
 
-
 Route::get('masterkemasan', 'App\Http\Controllers\MasterKemasanController@data_masterkemasan');
 Route::post('masterkemasan', 'App\Http\Controllers\MasterKemasanController@inputMasterKemasan');
 Route::get('edit_masterkemasan/{id}', 'App\Http\Controllers\MasterKemasanController@updateMasterKemasan');
