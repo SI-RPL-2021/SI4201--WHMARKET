@@ -38,8 +38,8 @@ class MasterBarangController extends Controller
     }
     public function updateMasterBarang($id)
     {
-        $masterbarang = DB::table('masterbarang')->where('id', $id)->first();
-        $masterkemasan = \B::table('masterkemasan')->get();
+        $masterbarang = \DB::table('masterbarang')->where('id', $id)->first();
+        $masterkemasan = \DB::table('masterkemasan')->get();
         $masterkategori = \DB::table('masterkategori')->get();
         $mastersatuan = \DB::table('mastersatuan')->get();
         return view('edit_masterbarang', compact('masterbarang','masterkategori','masterkemasan','mastersatuan'));
