@@ -90,17 +90,15 @@
 
     </div>
 
-
-
     <div class="col-md-10" style="margin-top: 0px;">
-        <h2> Data Stok Barang </h2>
+        <h2> Data Barang Keluar </h2>
         <br>
         @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-        @endif
-        <a href="{{ url('tambah_data_stokbarang') }}" class="btn btn-primary mt-3">Tambah Data Stok Barang</a>
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
+        <a href="{{ url('tambah_data_barangkeluar') }}" class="btn btn-primary mt-3">Tambah Data Barang Keluar</a>
         <br><br>
         <table class="table table-bordered mt-3">
             <thead class="thead-dark">
@@ -110,24 +108,25 @@
                     <th>Kategori</th>
                     <th>Satuan</th>
                     <th>Kemasan</th>
-                    <th>Harga</th>
-                    <th>Stok</th>
+                    <th>Jumlah Barang Keluar</th>
+                    <th>Waktu Barang Keluar</th>
                     <th>Action</th>
                 </tr>
-                @foreach ($masterbarang as $item)
+                @foreach ($data_barangkeluar as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nama_barang }}</td>
                         <td>{{ $item->kategori }}</td>
                         <td>{{ $item->satuan }}</td>
                         <td>{{ $item->kemasan }}</td>
-                        <td>{{ $item->harga }}</td>
-                        <td>{{ $item->stok }}</td>
+                        <td>{{ $item->jumlah }}</td>
+                        <td>{{ $item->tanggal }}</td>
+
                         <td>
-                            <a href="{{ url('edit_data_stokbarang/' . $item->id) }}">
+                            <a href="{{ url('edit_data_barangkeluar/' . $item->id) }}">
                                 <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                             </a>
-                            <form action="{{ url('data_stokbarang/' . $item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin untuk menghapus data ini?')">
+                            <form action="{{ url('data_barangkeluar/' . $item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin untuk menghapus data ini?')">
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-danger btn-sm">Delete</button>
