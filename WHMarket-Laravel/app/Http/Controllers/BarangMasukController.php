@@ -9,17 +9,15 @@ class BarangMasukController extends Controller
     //
     public function data_barangmasuk()
     {
-        $data_barangmasuk = \DB::table('masterbarang')->join('transaksi_barang', 'transaksi_barang.id_barang', '=', 'masterbarang.id')->where('transaksi_barang.status', 'Masuk')->get();
-        return view('data_barangmasuk', ['data_barangmasuk' => $data_barangmasuk]);
+        $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang')->where('transaksi_barang.status','Masuk')->get();
+        return view('data_barangmasuk', ['masterbarang' => $masterbarang]);
     }
     public function tambah_data_barangmasuk()
     {
 
-        $masterbarang = \DB::table('masterbarang')->join('data_stokbarang', 'data_stokbarang.id_barang', '=','masterbarang.id')->select('masterbarang.id', 'masterbarang.nama_barang')->where('data_stokbarang.stok', '>=', '0')->get();
-
-
-
-        return view('tambah_data_barangmasuk', compact('masterbarang'));
+        $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang','LEFT')->select('masterbarang.id', 'masterbarang.nama_barang')->get();
+        // dd($masterbarang);
+        return view('tambah_data_barangmasuk', ['masterbarang' => $masterbarang]);
     }
     public function inputDataBarangMasuk(Request $request)
     {
