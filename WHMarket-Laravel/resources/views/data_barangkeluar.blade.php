@@ -112,7 +112,7 @@
                     <th>Waktu Barang Keluar</th>
                     <th>Action</th>
                 </tr>
-                @foreach ($data_barangkeluar as $item)
+                @foreach ($masterbarang as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nama_barang }}</td>
