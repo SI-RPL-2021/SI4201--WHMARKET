@@ -9,26 +9,16 @@ class BarangKeluarController extends Controller
     //
     public function data_barangkeluar()
     {
-<<<<<<< HEAD
-        $data_barangkeluar = \DB::table('masterbarang')->join('transaksi_barang', 'transaksi_barang.id_barang', '=', 'masterbarang.id')->where('transaksi_barang.status', 'Keluar')->get();
-        return view('data_barangkeluar', ['data_barangkeluar' => $data_barangkeluar]);
-=======
         $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang')->where('transaksi_barang.status','Keluar')->get();
         return view('data_barangkeluar', ['masterbarang' => $masterbarang]);
->>>>>>> Branch_NabillaPrilya
     }
     
     public function tambah_data_barangkeluar()
     {
-<<<<<<< HEAD
-        $masterbarang = \DB::table('masterbarang')->join('data_stokbarang', 'data_stokbarang.id_barang', '=','masterbarang.id')->select('masterbarang.id', 'masterbarang.nama_barang')->where('data_stokbarang.stok', '>', '0')->get();
-        return view('tambah_data_barangkeluar', compact('masterbarang') );
-=======
         $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang','LEFT')->select('masterbarang.id', 'masterbarang.nama_barang')->get();
         // dd($masterbarang);
         return view('tambah_data_barangkeluar', ['masterbarang' => $masterbarang]);
->>>>>>> Branch_NabillaPrilya
-    
+        
     }
     
     public function inputDataBarangkeluar(Request $request)
