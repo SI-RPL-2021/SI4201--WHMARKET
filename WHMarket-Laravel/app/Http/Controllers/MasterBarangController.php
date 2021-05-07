@@ -38,7 +38,7 @@ class MasterBarangController extends Controller
     }
     public function updateMasterBarang($id)
     {
-        $masterbarang = \DB::table('masterbarang')->where('id', $id)->first();
+        $masterbarang  = \DB::table('masterbarang')->where('id', $id)->first();
         $masterkemasan = \DB::table('masterkemasan')->get();
         $masterkategori = \DB::table('masterkategori')->get();
         $mastersatuan = \DB::table('mastersatuan')->get();
