@@ -102,7 +102,7 @@
                              <th>Waktu Pemeriksaan</th>
                              <th>Action</th>
                           </tr>
-                          @foreach($pemeriksaanbarang as $item)
+                          @foreach($masterbarang as $item)
                           <tr>
                              <td>{{ $loop->iteration }}</td>
                              <td>{{ $item->nama_barang }}</td>

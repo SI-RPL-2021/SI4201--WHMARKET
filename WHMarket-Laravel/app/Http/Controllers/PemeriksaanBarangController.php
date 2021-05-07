@@ -8,9 +8,10 @@ class PemeriksaanBarangController extends Controller
 {
     public function pemeriksaanbarang()
     {
-        $pemeriksaanbarang = \DB::table('pemeriksaanbarang')->get();
-        return view('pemeriksaanbarang', ['pemeriksaanbarang' => $pemeriksaanbarang]);
+        $masterbarang = \DB::table('masterbarang')->join('pemeriksaanbarang', 'masterbarang.id', '=', 'pemeriksaanbarang.id_barang')->get();
+        return view('pemeriksaanbarang', ['masterbarang' => $masterbarang]);
     }
+    
     public function delete($id)
     {
         \DB::table('pemeriksaanbarang')->where('id', $id)->delete();
