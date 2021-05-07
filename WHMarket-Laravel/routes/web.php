@@ -76,4 +76,6 @@ Route::delete('data_barangkeluar/{id}', 'App\Http\Controllers\BarangKeluarContro
 
 Route::get('pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangController@pemeriksaanbarang');
 Route::post('pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangController@InputPemeriksaanBarang');
+Route::get('edit_pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangController@updatePemeriksaanBarang');
+Route::patch('pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangController@updatePemeriksaanBarangProcess');
 Route::delete('pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangController@delete');

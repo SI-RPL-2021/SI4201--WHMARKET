@@ -29,7 +29,23 @@ class PemeriksaanBarangController extends Controller
             ]);
             return redirect('pemeriksaanbarang')->with('status', 'Data Pemeriksaan Barang Berhasil Ditambah!');
     }
-
+    public function updatePemeriksaanBarang($id)
+    {
+        $masterbarang = \DB::table('masterbarang')->join('pemeriksaanbarang', 'masterbarang.id', '=', 'pemeriksaanbarang.id_barang')->where('pemeriksaanbarang.id', $id)->first();
+        // dd($masterbarang);
+        return view('edit_pemeriksaanbarang', ['pemeriksaanbarang' => $masterbarang]);
+    }
+    public function updatePemeriksaanBarangProcess(Request $request, $id)
+    {
+        \DB::table('pemeriksaanbarang')->where('id', $id)
+        ->update([
+            
+            'jumlah_barangaman' => $request->jumlah_barangaman, 
+            'jumlah_barangexpired' => $request->jumlah_barangexpired, 
+            'waktu_pemeriksaanbarang' => $request->waktu_pemeriksaanbarang, 
+        ]);
+        return redirect('pemeriksaanbarang')->with('status', 'Data Pemeriksaan Barang Berhasil Diubah!');
+    }
 
     public function delete($id)
     {
