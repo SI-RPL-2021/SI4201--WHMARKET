@@ -111,7 +111,7 @@
                              <td>{{ $item->kemasan }}</td>
                              <td>{{ $item->jumlah_barangaman }}</td>
                              <td>{{ $item->jumlah_barangexpired }}</td>
-                             <td>{{ $item->waktu_pemeriksaan }}</td>
+                             <td>{{ $item->waktu_pemeriksaanbarang }}</td>
                              
                              <td>
                              <a href ="{{ url('edit_pemeriksaanbarang/'.$item->id) }}">

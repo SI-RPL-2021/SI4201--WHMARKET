@@ -30,6 +30,7 @@ Route::get('tambah_masterkemasan', 'App\Http\Controllers\MasterKemasanController
 Route::get('tambah_data_stokbarang', 'App\Http\Controllers\DataStokBarangController@tambah_data_stokbarang');
 Route::get('tambah_data_barangmasuk', 'App\Http\Controllers\BarangMasukController@tambah_data_barangmasuk');
 Route::get('tambah_data_barangkeluar', 'App\Http\Controllers\BarangKeluarController@tambah_data_barangkeluar');
+Route::get('tambah_pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangController@tambah_pemeriksaanbarang');
 
 Route::get('masterkemasan', 'App\Http\Controllers\MasterKemasanController@data_masterkemasan');
 Route::post('masterkemasan', 'App\Http\Controllers\MasterKemasanController@inputMasterKemasan');
@@ -74,4 +75,5 @@ Route::patch('data_barangkeluar/{id}', 'App\Http\Controllers\BarangKeluarControl
 Route::delete('data_barangkeluar/{id}', 'App\Http\Controllers\BarangKeluarController@delete');
 
 Route::get('pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangController@pemeriksaanbarang');
+Route::post('pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangController@InputPemeriksaanBarang');
 Route::delete('pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangController@delete');
