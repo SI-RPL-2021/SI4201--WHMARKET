@@ -93,15 +93,15 @@
           
                     <div class="form-group">
 						<label>Jumlah Barang Aman</label>
-						<input type="number" class="form-control" name="jumlah_barangaman" value="{{ $jumlah_barangaman->jumlah_barangaman }}" required>
+						<input type="number" class="form-control" name="jumlah_barangaman" value="{{ $pemeriksaanbarang->jumlah_barangaman }}" required>
 					</div>
                     <div class="form-group">
 						<label>Jumlah Barang Expired</label>
-						<input type="number" class="form-control" name="jumlah_barangexpired" value="{{ $jumlah_barangexpired->jumlah_barangexpired }}" required>
+						<input type="number" class="form-control" name="jumlah_barangexpired" value="{{ $pemeriksaanbarang->jumlah_barangexpired }}" required>
 					</div>
                     <div class="form-group">
 						<label>Waktu Pemeriksaan Barang</label>
-						<input type="number" class="form-control" name="waktu_pemeriksaanbarang" value="{{ $waktu_pemeriksaanbarang->waktu_pemeriksaanbarang }}" required>
+						<input type="date" class="form-control" name="waktu_pemeriksaanbarang" value="{{ $pemeriksaanbarang->waktu_pemeriksaanbarang }}" required>
 					</div>
                <br>
 					
