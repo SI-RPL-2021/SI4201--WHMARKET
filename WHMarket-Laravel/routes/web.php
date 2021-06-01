@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //
+Route::get('/halamanlogin', function () {
+    return view('halamanlogin');
+});
+
 Route::get('home', 'App\Http\Controllers\HomeController@home');
 Route::get('masterbarang', 'App\Http\Controllers\HomeController@masterbarang');
 Route::get('mastersatuan', 'App\Http\Controllers\HomeController@mastersatuan');

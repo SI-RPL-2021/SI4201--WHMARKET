@@ -51,4 +51,8 @@ class HomeController extends Controller
     {
         return view('datasupplier');
     }
+    public function halamanlogin()
+    {
+        return view('halamanlogin');
+    }
 }
