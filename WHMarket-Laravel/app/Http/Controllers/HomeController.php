@@ -47,4 +47,8 @@ class HomeController extends Controller
     {
         return view('datapegawai');
     }
+    public function datasupplier()
+    {
+        return view('datasupplier');
+    }
 }
