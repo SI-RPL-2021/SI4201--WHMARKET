@@ -55,4 +55,8 @@ class HomeController extends Controller
     {
         return view('halamanlogin');
     }
+    public function dashboard_reporting()
+    {
+        return view('dashboard_reporting');
+    }
 }
