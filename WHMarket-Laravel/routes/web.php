@@ -26,6 +26,7 @@ Route::get('data_stokbarang', 'App\Http\Controllers\HomeController@data_stokbara
 Route::get('data_barangmasuk', 'App\Http\Controllers\HomeController@data_barangmasuk');
 Route::get('data_barangkeluar', 'App\Http\Controllers\HomeController@data_barangkeluar');
 Route::get('pemeriksaanbarang', 'App\Http\Controllers\HomeController@pemeriksaanbarang');
+Route::get('datapegawai', 'App\Http\Controllers\HomeController@datapegawai');
 
 Route::get('tambah_masterbarang', 'App\Http\Controllers\MasterBarangController@tambah_masterbarang');
 Route::get('tambah_mastersatuan', 'App\Http\Controllers\MasterSatuanController@tambah_mastersatuan');
@@ -64,7 +65,7 @@ Route::get('data_stokbarang', 'App\Http\Controllers\DataStokBarangController@dat
 Route::post('data_stokbarang', 'App\Http\Controllers\DataStokBarangController@InputDataStokBarang');
 Route::get('edit_data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@updateDataStokBarang');
 Route::patch('data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@updateDataStokBarangProcess');
-Route::delete('data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@delete');
+Route::delete('data_stokbarang/{id}', 'App\Http\Controllers\DataPegawaiController@delete');
 
 Route::get('data_barangmasuk', 'App\Http\Controllers\BarangMasukController@data_barangmasuk');
 Route::post('data_barangmasuk', 'App\Http\Controllers\BarangMasukController@InputDataBarangMasuk');
@@ -83,3 +84,6 @@ Route::post('pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangControll
 Route::get('edit_pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangController@updatePemeriksaanBarang');
 Route::patch('pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangController@updatePemeriksaanBarangProcess');
 Route::delete('pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangController@delete');
+
+Route::get('datapegawai', 'App\Http\Controllers\DataPegawaiController@datapegawai');
+Route::delete('datapegawai/{id}', 'App\Http\Controllers\DataPegawaiController@delete');
