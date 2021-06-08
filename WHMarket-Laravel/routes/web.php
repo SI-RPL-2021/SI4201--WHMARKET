@@ -87,3 +87,6 @@ Route::delete('pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangC
 
 Route::get('datapegawai', 'App\Http\Controllers\DataPegawaiController@datapegawai');
 Route::delete('datapegawai/{id}', 'App\Http\Controllers\DataPegawaiController@delete');
+
+Route::get('datasupplier', 'App\Http\Controllers\DataSupplierController@datasupplier');
+Route::delete('datasupplier/{id}', 'App\Http\Controllers\DataSupplierController@delete');
