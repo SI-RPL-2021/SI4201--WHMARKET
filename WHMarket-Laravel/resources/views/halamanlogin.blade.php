@@ -43,7 +43,8 @@
                         </label> <input type="password" name="password" placeholder="Enter password"> </div>
                         <br>
                     <div class="row px-3 mb-4">
-                        <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input">                    </div>
+                        <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input">
+                    </div>
                     <div class="row mb-2 px-2"> <button type="submit" class="btn btn-blue text-center" style="width: 150px; height:40px;">Login</button> </div>
                 </div>
             </div>
