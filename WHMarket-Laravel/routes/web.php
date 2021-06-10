@@ -38,6 +38,7 @@ Route::get('tambah_data_barangmasuk', 'App\Http\Controllers\BarangMasukControlle
 Route::get('tambah_data_barangkeluar', 'App\Http\Controllers\BarangKeluarController@tambah_data_barangkeluar');
 Route::get('tambah_pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangController@tambah_pemeriksaanbarang');
 Route::get('tambah_datasupplier', 'App\Http\Controllers\DataSupplierController@tambah_datasupplier');
+Route::get('tambah_datapegawai', 'App\Http\Controllers\DataSupplierController@tambah_datapegawai');
 
 Route::get('masterkemasan', 'App\Http\Controllers\MasterKemasanController@data_masterkemasan');
 Route::post('masterkemasan', 'App\Http\Controllers\MasterKemasanController@inputMasterKemasan');
@@ -88,6 +89,9 @@ Route::patch('pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangCo
 Route::delete('pemeriksaanbarang/{id}', 'App\Http\Controllers\PemeriksaanBarangController@delete');
 
 Route::get('datapegawai', 'App\Http\Controllers\DataPegawaiController@datapegawai');
+Route::post('datapegawai', 'App\Http\Controllers\DataPegawaiController@InputDataPegawai');
+Route::get('edit_datapegawai/{id}', 'App\Http\Controllers\DataPegawaiController@updateDataPegawai');
+Route::patch('datapegawai/{id}', 'App\Http\Controllers\DataPegawaiController@updateDataPegawaiProcess');
 Route::delete('datapegawai/{id}', 'App\Http\Controllers\DataPegawaiController@delete');
 
 Route::get('datasupplier', 'App\Http\Controllers\DataSupplierController@datasupplier');
