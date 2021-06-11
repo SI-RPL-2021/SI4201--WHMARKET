@@ -13,10 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //
-Route::get('/halamanlogin', function () {
-    return view('halamanlogin');
-});
 
+
+Route::get('halamanlogin', 'App\Http\Controllers\AuthController@login')->name('halamanlogin');
+Route::post('InputLogin', 'App\Http\Controllers\AuthController@InputLogin');
+
+Route::group(['middleware' => 'auth'],function(){
 Route::get('home', 'App\Http\Controllers\HomeController@home');
 Route::get('masterbarang', 'App\Http\Controllers\HomeController@masterbarang');
 Route::get('mastersatuan', 'App\Http\Controllers\HomeController@mastersatuan');
@@ -99,3 +101,4 @@ Route::post('datasupplier', 'App\Http\Controllers\DataSupplierController@InputDa
 Route::get('edit_datasupplier/{id}', 'App\Http\Controllers\DataSupplierController@updateDataSupplier');
 Route::patch('datasupplier/{id}', 'App\Http\Controllers\DataSupplierController@updateDataSupplierProcess');
 Route::delete('datasupplier/{id}', 'App\Http\Controllers\DataSupplierController@delete');
+});

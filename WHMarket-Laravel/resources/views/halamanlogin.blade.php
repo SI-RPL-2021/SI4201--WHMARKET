@@ -35,17 +35,22 @@
             <div class="col-lg-6" style="padding-top: 2cm;">
             <h3> Welcome Back. Lets Get Back To Work</h3>
                 <div class="card2 card border-0 px-4 py-5">
+                <form class="form-auth" action="{{ url('InputLogin') }}" method="POST">
+                @csrf
                     <div class="row px-2"> <label class="mb-1">
                             <h4>Email Address</h4>
-                        </label> <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address"> </div>
+                        </label> <input type="email" name="email" placeholder="Enter a valid email address"> </div>
+                        <br><br>
                     <div class="row px-2"> <label class="mb-1">
                             <h4>Password</h4>
                         </label> <input type="password" name="password" placeholder="Enter password"> </div>
-                        <br>
+                        <br><br><br>
                     <div class="row px-3 mb-4">
                         <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1" type="checkbox" name="chk" class="custom-control-input">
                     </div>
-                    <div class="row mb-2 px-2"> <button type="submit" class="btn btn-blue text-center" style="width: 150px; height:40px;">Login</button> </div>
+                    <div class="row mb-2 px-2"> <button type="submit" class="btn btn-blue text-center" style="width: 150px; height:40px;">Login</button>
+                    </form>
+                    </div>
                 </div>
             </div>
         </div>
