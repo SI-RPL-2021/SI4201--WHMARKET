@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('halamanlogin', 'App\Http\Controllers\AuthController@login')->name('halamanlogin');
 Route::post('InputLogin', 'App\Http\Controllers\AuthController@InputLogin');
+Route::get('logout', 'App\Http\Controllers\LogoutController@logout');
 
 Route::group(['middleware' => 'auth'],function(){
 Route::get('home', 'App\Http\Controllers\HomeController@home');
