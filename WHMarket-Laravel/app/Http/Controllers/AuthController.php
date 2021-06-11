@@ -17,5 +17,9 @@ class AuthController extends Controller
         }
         return redirect('halamanlogin');
     }
-    
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('halamanlogin');
+    }
 }
