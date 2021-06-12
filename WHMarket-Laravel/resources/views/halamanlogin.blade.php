@@ -39,19 +39,23 @@
                     <div class="row px-3 mb-4">
                     <h3> Welcome Back. Lets Get Back To Work</h3>
                     </div>
-                    <div class="row px-3"> <label class="mb-1">
-                    <br>
-                            <h6 class="mb-0 text-sm">Email Address</h6>
-                            <br>
-                        </label> <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address"> </div>
-                    <div class="row px-3"> <label class="mb-1">
-            
-                            <h6 class="mb-0 text-sm">Password</h6>
-                            <br>
-                        </label> <input type="password" name="password" placeholder="Enter password"> </div>
-                    <div class="row px-3 mb-4">
+                    <form class="form-auth" action="{{ url('InputLogin') }}" method="POST">
+                @csrf
+                        <div class="row px-3"> <label class="mb-1">
+                        <br>
+                                <h6 class="mb-0 text-sm">Email Address</h6>
+                                <br>
+                            </label> <input type="email" name="email" placeholder="Enter a valid email address"> </div>
+                        <div class="row px-3"> <label class="mb-1">
+                <br>
+                                <h6 class="mb-0 text-sm">Password</h6>
+                                <br>
+                            </label> <input type="password" name="password" placeholder="Enter password"> </div>
+                        <div class="row px-3 mb-4">
+                        </div>
+                        <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Login</button>
+                    </form>
                     </div>
-                    <div class="row mb-3 px-3"> <button type="submit" class="btn btn-blue text-center">Login</button> </div>
                 </div>
             </div>
         </div>
