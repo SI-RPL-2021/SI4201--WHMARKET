@@ -47,6 +47,7 @@ class DataSupplierController extends Controller
     public function delete($id)
     {
         \DB::table('datasupplier')->where('id', $id)->delete();
-        return redirect('datasupplier'); //
+        return redirect('datasupplier')->with('status', 'Data Supplier Berhasil Dihapus!'); //
+        
     }
 }
