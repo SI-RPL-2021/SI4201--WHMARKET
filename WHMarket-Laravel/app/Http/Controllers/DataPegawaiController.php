@@ -62,7 +62,6 @@ class DataPegawaiController extends Controller
         ]);
         return redirect('datapegawai')->with('status', 'Data Pegawai Berhasil Diubah!');
     }
-    }
     public function delete($id)
     {
         \DB::table('datapegawai')->where('id', $id)->delete();
