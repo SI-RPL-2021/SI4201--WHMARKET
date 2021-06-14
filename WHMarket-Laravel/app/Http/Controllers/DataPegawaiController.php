@@ -39,7 +39,7 @@ class DataPegawaiController extends Controller
         ]);
 
         
-            return redirect('datapegawai');
+            return redirect('datapegawai')->with('status', 'Data Pegawai Berhasil Ditambah!');
     }
     public function updateDataPegawai($id)
     {
@@ -60,11 +60,12 @@ class DataPegawaiController extends Controller
             'password' => $request->password,
             'no_hp' => $request->no_hp
         ]);
-        return redirect('datapegawai');
+        return redirect('datapegawai')->with('status', 'Data Pegawai Berhasil Diubah!');
+    }
     }
     public function delete($id)
     {
         \DB::table('datapegawai')->where('id', $id)->delete();
-        return redirect('datapegawai');
+        return redirect('datapegawai')->with('status', 'Data Pegawai Berhasil Dihapus!');
     }
 }

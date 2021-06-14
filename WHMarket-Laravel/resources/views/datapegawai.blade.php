@@ -113,7 +113,7 @@
                              <a href ="{{ url('edit_datapegawai/'.$item->id) }}">
                              <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                              </a>
-                             <form action="{{ url('datapegawai/'.$item->id) }}" method="post" class="d-inline">
+                             <form action="{{ url('datapegawai/'.$item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin untuk menghapus data ini?')">
                               @method('delete')
                                 @csrf
                                 <button class="btn btn-danger btn-sm">Delete</button>
