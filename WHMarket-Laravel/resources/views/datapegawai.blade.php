@@ -87,8 +87,14 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2> Data Pegawai </h2>
                     <br>
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
                     <a href="{{ url('tambah_datapegawai') }}" class="btn btn-primary mt-3">Tambah Data Pegawai</a>
                     <br><br>
+
                     <table class="table table-bordered mt-3">
                        <thead class="thead-dark">
                           <tr>
