@@ -107,7 +107,9 @@
                         <form action="{{ url('masterkemasan/'.$item->id) }}" method="post" class="d-inline">
                          @method('delete')
                            @csrf
-                           <button class="btn btn-danger btn-sm">Delete</button>
+                           @if(auth()->user()->role == 'admin')
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                           @endif
                          </form>
                         </td>
 						</thead>

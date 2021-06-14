@@ -116,7 +116,9 @@
                              <form action="{{ url('masterbarang/'.$item->id) }}" method="post" class="d-inline">
                               @method('delete')
                                 @csrf
+                                @if(auth()->user()->role == 'admin')
                                 <button class="btn btn-danger btn-sm">Delete</button>
+                                @endif
                               </form>
                              </td>
                        </thead>
