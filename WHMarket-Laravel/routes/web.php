@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //
-
+Route::get('/', function () {
+    return view('halamanlogin');
+});
 
 Route::get('halamanlogin', 'App\Http\Controllers\AuthController@login')->name('halamanlogin');
 Route::post('InputLogin', 'App\Http\Controllers\AuthController@InputLogin');
+Route::get('logout', 'App\Http\Controllers\AuthController@logout');
 
 Route::group(['middleware' => 'auth'],function(){
 Route::get('home', 'App\Http\Controllers\HomeController@home');
@@ -40,7 +43,7 @@ Route::get('tambah_data_barangmasuk', 'App\Http\Controllers\BarangMasukControlle
 Route::get('tambah_data_barangkeluar', 'App\Http\Controllers\BarangKeluarController@tambah_data_barangkeluar');
 Route::get('tambah_pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangController@tambah_pemeriksaanbarang');
 Route::get('tambah_datasupplier', 'App\Http\Controllers\DataSupplierController@tambah_datasupplier');
-Route::get('tambah_datapegawai', 'App\Http\Controllers\DataSupplierController@tambah_datapegawai');
+Route::get('tambah_datapegawai', 'App\Http\Controllers\DataPegawaiController@tambah_datapegawai');
 
 Route::get('masterkemasan', 'App\Http\Controllers\MasterKemasanController@data_masterkemasan');
 Route::post('masterkemasan', 'App\Http\Controllers\MasterKemasanController@inputMasterKemasan');

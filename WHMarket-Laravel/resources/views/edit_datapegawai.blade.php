@@ -27,7 +27,7 @@
       </ol>
    </div>
 	
-   <div class="col-md-2 colmenu" style="padding:0; width:100%; background-color:#b3cde0;">
+   <div class="col-md-2 colmenu" style="padding:0; width:100%; height:20cm; background-color:#b3cde0;">
       
       <div class="container" id='cssmenu' style="width:100%; padding:0cm;" >
 <ul style="padding:0; background-color:#b3cde0;"> 
@@ -105,9 +105,17 @@
 						<label>Email</label>
 						<input type="email" class="form-control" name="email" value="{{ $datapegawai->email }}">
 					</div>
+               <div class="form-group">
+						<label>Password</label>
+						<input type="password" class="form-control" name="password" readonly value="{{ $datapegawai->password }}">
+					</div>
                     <div class="form-group">
 						<label>No HP</label>
 						<input type="number" class="form-control" name="no_hp" value="{{ $datapegawai->no_hp }}">
+					</div>
+               <div class="form-group">
+						<label>User ID</label>
+						<input type="number" class="form-control" name="user_id" readonly value="{{ $datapegawai->user_id }}">
 					</div>
                <br>
    

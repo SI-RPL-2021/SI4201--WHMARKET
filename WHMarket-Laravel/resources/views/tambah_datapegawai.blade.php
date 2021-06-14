@@ -108,6 +108,10 @@
                 <label>No HP</label>
                 <input type="number" class="form-control" name="no_hp">
             </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password">
+            </div>
                   <br>
 					
 					<button class="btn btn-primary" type="submit" name="submit">Submit</button>
