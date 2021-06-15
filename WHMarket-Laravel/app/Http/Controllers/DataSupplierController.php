@@ -25,7 +25,7 @@ class DataSupplierController extends Controller
             'email' => $request->email,
             'no_hp' => $request->no_hp
             ]);
-            return redirect('datasupplier');
+            return redirect('datasupplier')->with('status', 'Data Supplier Berhasil Ditambah!');
     }
     public function updateDataSupplier($id)
     {
@@ -42,7 +42,7 @@ class DataSupplierController extends Controller
             'email' => $request->email,
             'no_hp' => $request->no_hp
         ]);
-        return redirect('datasupplier');
+        return redirect('datasupplier')->with('status', 'Data Supplier Berhasil Diubah!');
     }
     public function delete($id)
     {

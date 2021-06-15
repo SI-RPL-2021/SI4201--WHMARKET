@@ -85,7 +85,7 @@
    
    
    <div class="col-md-10" style="width: 20cm; padding-left: 3cm;">
-   <h2>Edit Data Pegawai </h2><br>
+   <h2>Edit Data Supplier </h2><br>
       <form action="{{ url('datasupplier/'.$datasupplier->id) }}" method="post">
           @method('patch')
           @csrf
