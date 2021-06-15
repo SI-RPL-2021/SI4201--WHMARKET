@@ -110,6 +110,14 @@
                 <label>Waktu Barang Masuk </label>
                 <input type="date" class="form-control" name="waktu_barangmasuk" required>
             </div>
+            <div class="form-group">
+                <label>Supplier</label>
+                <select name="supplier" id="nama_supplier" class="form-control">
+                    @foreach ($datasupplier as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama_supplier }}</option>
+                    @endforeach
+                </select>
+            </div>
             <br>
 
             <button class="btn btn-primary" type="submit" name="submit">Submit</button>

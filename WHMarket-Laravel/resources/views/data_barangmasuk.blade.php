@@ -112,6 +112,7 @@
                     <th>Kemasan</th>
                     <th>Jumlah Barang Masuk</th>
                     <th>Waktu Barang Masuk</th>
+                    <th>Supplier</th>
                     <th>Action</th>
                 </tr>
                 @foreach ($masterbarang as $item)
@@ -123,13 +124,14 @@
                         <td>{{ $item->kemasan }}</td>
                         <td>{{ $item->jumlah }}</td>
                         <td>{{ $item->tanggal }}</td>
+                        <td>{{ $item->nama_supplier }}</td>
 
                         <td>
                             <a href="{{ url('edit_data_barangmasuk/' . $item->id) }}">
                             @if(auth()->user()->role == 'pegawai')
                                 <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                             </a>
-                            <form action="{{ url('data_barangmasuk/' . $item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin untuk menghapus data ini?')">
+                            <form action="{{ url('data_barangmasuk/' . $item->id_barang) }}" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin untuk menghapus data ini?')">
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-danger btn-sm">Delete</button>

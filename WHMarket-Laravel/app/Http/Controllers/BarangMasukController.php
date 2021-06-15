@@ -9,15 +9,19 @@ class BarangMasukController extends Controller
     //
     public function data_barangmasuk()
     {
-        $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang')->where('transaksi_barang.status','Masuk')->get();
+        $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang')->join('transaksi_supplier', 'masterbarang.id', '=', 'transaksi_supplier.id_barang')->join('datasupplier','datasupplier.id','=','transaksi_supplier.id_supplier')->where('transaksi_barang.status','Masuk')->get();
+       
         return view('data_barangmasuk', ['masterbarang' => $masterbarang]);
+
     }
     public function tambah_data_barangmasuk()
     {
 
-        $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang','LEFT')->select('masterbarang.id', 'masterbarang.nama_barang')->get();
-        // dd($masterbarang);
-        return view('tambah_data_barangmasuk', ['masterbarang' => $masterbarang]);
+        $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang','LEFT')->select('masterbarang.id', 'masterbarang.nama_barang')->distinct()->get();
+        
+        $datasupplier = \DB::table('datasupplier')->select('id','nama_supplier')->get();
+
+        return view('tambah_data_barangmasuk', ['masterbarang' => $masterbarang, 'datasupplier' => $datasupplier]);
     }
     public function inputDataBarangMasuk(Request $request)
     {
@@ -30,6 +34,10 @@ class BarangMasukController extends Controller
             'jumlah' => $request->jumlah_barangmasuk,
             'tanggal' => $request->waktu_barangmasuk,
             'status' => "Masuk"
+        ]);
+        \DB::table('transaksi_supplier')->insert([
+            'id_barang' => $request->barang,
+            'id_supplier' => $request->supplier
         ]);
         return redirect('data_barangmasuk')->with('status', 'Tambah Data Barang Masuk Berhasil!');
     }
@@ -61,6 +69,7 @@ class BarangMasukController extends Controller
         $sum_before = $stock - $jumlah_before;
         \DB::table('data_stokbarang')->where('id_barang', $id_barang)->update(['stok' => $sum_before]);
         \DB::table('transaksi_barang')->where('id', $id)->delete();
+        \DB::table('transaksi_supplier')->where('id', $id)->delete();
         return redirect('data_barangmasuk')->with('status', 'Data Barang Masuk Berhasil Dihapus!');
     }
 }

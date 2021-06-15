@@ -108,6 +108,10 @@
                 <label>Waktu Barang Masuk </label>
                 <input type="date" class="form-control" name="waktu_barangmasuk" value="{{$barangmasuk->tanggal}}" required>
             </div>
+            <div class="form-group">
+                <label>Supplier</label>
+                <input type="text" class="form-control" name="nama_supplier" value="{{ $barangmasuk->nama_supplier }}" readonly>
+            </div>
             <br>
 
             <button class="btn btn-primary" type="submit" name="submit">Submit</button>
