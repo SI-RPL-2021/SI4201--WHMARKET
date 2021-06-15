@@ -87,6 +87,11 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2> Data Supplier </h2>
                     <br>
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
                     @if(auth()->user()->role == 'admin')
                     <a href="{{ url('tambah_datasupplier') }}" class="btn btn-primary mt-3">Tambah Data Supplier</a>
                     @endif
