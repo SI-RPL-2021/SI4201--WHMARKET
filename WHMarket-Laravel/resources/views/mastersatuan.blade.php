@@ -88,7 +88,9 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2> Master Satuan </h2>
                     <br>
+                    @if(auth()->user()->role == 'admin')
                     <a href="{{ url('tambah_mastersatuan') }}" class="btn btn-primary mt-3">Tambah Master Satuan</a>
+                    @endif
 					<br><br>
 					<table class="table table-bordered mt-3">
 						<thead class="thead-dark">
@@ -102,13 +104,14 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nama_satuan }}</td>
                         <td>
+                        @if(auth()->user()->role == 'admin')
                         <a href ="{{ url('edit_mastersatuan/'.$item->id) }}">
                         <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                         </a>
                         <form action="{{ url('mastersatuan/'.$item->id) }}" method="post" class="d-inline">
                          @method('delete')
                            @csrf
-                           @if(auth()->user()->role == 'admin')
+                           
                                 <button class="btn btn-danger btn-sm">Delete</button>
                            @endif
                          </form>
