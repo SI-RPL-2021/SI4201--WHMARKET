@@ -92,7 +92,9 @@
                         {{ session('status') }}
                     </div>
                 @endif
+                @if(auth()->user()->role == 'admin')
                     <a href="{{ url('tambah_datapegawai') }}" class="btn btn-primary mt-3">Tambah Data Pegawai</a>
+                    @endif
                     <br><br>
 
                     <table class="table table-bordered mt-3">
@@ -116,6 +118,7 @@
                              <td>{{ $item->no_hp }}</td>
                              
                              <td>
+                             @if(auth()->user()->role == 'admin')
                              <a href ="{{ url('edit_datapegawai/'.$item->id) }}">
                              <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                              </a>
@@ -123,6 +126,7 @@
                               @method('delete')
                                 @csrf
                                 <button class="btn btn-danger btn-sm">Delete</button>
+                                @endif
                               </form>
                              </td>
                        </thead>

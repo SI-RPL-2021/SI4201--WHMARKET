@@ -98,7 +98,9 @@
                 {{ session('status') }}
             </div>
         @endif
+        @if(auth()->user()->role == 'pegawai')
         <a href="{{ url('tambah_data_barangmasuk') }}" class="btn btn-primary mt-3">Tambah Data Barang Masuk</a>
+        @endif
         <br><br>
         <table class="table table-bordered mt-3">
             <thead class="thead-dark">
@@ -124,12 +126,14 @@
 
                         <td>
                             <a href="{{ url('edit_data_barangmasuk/' . $item->id) }}">
+                            @if(auth()->user()->role == 'pegawai')
                                 <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                             </a>
                             <form action="{{ url('data_barangmasuk/' . $item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin untuk menghapus data ini?')">
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-danger btn-sm">Delete</button>
+                                @endif
                             </form>
                         </td>
             </thead>

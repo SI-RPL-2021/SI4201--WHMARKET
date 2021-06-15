@@ -87,7 +87,9 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2> Data Supplier </h2>
                     <br>
+                    @if(auth()->user()->role == 'admin')
                     <a href="{{ url('tambah_datasupplier') }}" class="btn btn-primary mt-3">Tambah Data Supplier</a>
+                    @endif
                     <br><br>
                     <table class="table table-bordered mt-3">
                        <thead class="thead-dark">
@@ -110,6 +112,7 @@
                              <td>{{ $item->no_hp }}</td>
                              
                              <td>
+                             @if(auth()->user()->role == 'admin')
                              <a href ="{{ url('edit_datasupplier/'.$item->id) }}">
                              <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                              </a>
@@ -117,6 +120,7 @@
                               @method('delete')
                                 @csrf
                                 <button class="btn btn-danger btn-sm">Delete</button>
+                                @endif
                               </form>
                              </td>
                        </thead>
