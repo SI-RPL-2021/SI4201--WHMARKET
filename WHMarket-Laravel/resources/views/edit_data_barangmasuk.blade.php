@@ -110,8 +110,11 @@
             </div>
             <div class="form-group">
                 <label>Supplier</label>
-                <input type="text" class="form-control" name="nama_supplier" value="{{ $barangmasuk->nama_supplier }}" readonly>
-            </div>
+                <select name="supplier" id="nama_supplier" class="form-control">
+                    @foreach ($datasupplier as $item)
+                    <option value="{{ $item->id }}" {{$barangmasuk->nama_supplier == $item->nama_supplier ? "selected" : null}}>{{ $item->nama_supplier }}</option>
+                    @endforeach
+                </select>
             <br>
 
             <button class="btn btn-primary" type="submit" name="submit">Submit</button>

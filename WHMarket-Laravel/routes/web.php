@@ -43,7 +43,7 @@ Route::get('data_barangkeluar', 'App\Http\Controllers\BarangKeluarController@dat
 Route::get('pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangController@pemeriksaanbarang');
 Route::get('datapegawai', 'App\Http\Controllers\DataPegawaiController@datapegawai');
 Route::get('datasupplier', 'App\Http\Controllers\DataSupplierController@datasupplier');
-
+Route::get('dashboard_reporting', 'App\Http\Controllers\DashboardController@dashboard');
 });
 
 Route::group(['middleware' => ['auth','checkRole:admin']],function(){

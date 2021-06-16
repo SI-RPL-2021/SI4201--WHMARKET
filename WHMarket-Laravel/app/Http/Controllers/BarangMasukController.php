@@ -9,7 +9,7 @@ class BarangMasukController extends Controller
     //
     public function data_barangmasuk()
     {
-        $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang')->join('transaksi_supplier', 'masterbarang.id', '=', 'transaksi_supplier.id_barang')->join('datasupplier','datasupplier.id','=','transaksi_supplier.id_supplier')->where('transaksi_barang.status','Masuk')->get();
+        $masterbarang = \DB::select("SELECT masterbarang.nama_barang, masterbarang.kategori, masterbarang.satuan, masterbarang.kemasan, transaksi_barang.jumlah, transaksi_barang.tanggal, datasupplier.nama_supplier, transaksi_barang.id, transaksi_barang.id_barang FROM masterbarang INNER JOIN transaksi_barang ON masterbarang.id = transaksi_barang.id_barang INNER JOIN datasupplier ON datasupplier.id = transaksi_barang.id_supplier WHERE transaksi_barang.status = 'Masuk'");
        
         return view('data_barangmasuk', ['masterbarang' => $masterbarang]);
 
@@ -31,20 +31,19 @@ class BarangMasukController extends Controller
         \DB::table('data_stokbarang')->where('id_barang', $request->barang)->update(['stok' => $jumlah]);
         \DB::table('transaksi_barang')->insert([
             'id_barang' => $request->barang,
+            'id_supplier' => $request->supplier,
             'jumlah' => $request->jumlah_barangmasuk,
             'tanggal' => $request->waktu_barangmasuk,
             'status' => "Masuk"
         ]);
-        \DB::table('transaksi_supplier')->insert([
-            'id_barang' => $request->barang,
-            'id_supplier' => $request->supplier
-        ]);
+       
         return redirect('data_barangmasuk')->with('status', 'Tambah Data Barang Masuk Berhasil!');
     }
     public function updateDataBarangmasuk($id)
     {
-        $barangmasuk = \DB::table('masterbarang')->join('transaksi_barang', 'transaksi_barang.id_barang', '=', 'masterbarang.id')->where('transaksi_barang.id', $id)->first();
-        return view('edit_data_barangmasuk', ['barangmasuk' => $barangmasuk]);
+        $barangmasuk = \DB::select("SELECT masterbarang.nama_barang, masterbarang.kategori, masterbarang.satuan, masterbarang.kemasan, transaksi_barang.jumlah, transaksi_barang.tanggal, datasupplier.nama_supplier, transaksi_barang.id, transaksi_barang.id_barang FROM masterbarang INNER JOIN transaksi_barang ON masterbarang.id = transaksi_barang.id_barang INNER JOIN datasupplier ON datasupplier.id = transaksi_barang.id_supplier WHERE transaksi_barang.id = ".$id);
+        $datasupplier = \DB::table('datasupplier')->select('id','nama_supplier')->get();
+        return view('edit_data_barangmasuk', ['barangmasuk' => $barangmasuk[0], 'datasupplier' => $datasupplier]);
     }
     public function updateDataBarangMasukProcess(Request $request, $id)
     {
@@ -55,10 +54,11 @@ class BarangMasukController extends Controller
         $sum_after = $sum_before + $masuk;
         \DB::table('data_stokbarang')->where('id_barang', $request->id_barang)->update(['stok' => $sum_after]);
         \DB::table('transaksi_barang')->where('id', $id)
-            ->update([
-                'jumlah' => $request->jumlah_barangmasuk,
-                'tanggal' => $request->waktu_barangmasuk
-            ]);
+                ->update([
+                    'id_supplier' => $request->supplier,
+                    'jumlah' => $request->jumlah_barangmasuk,
+                    'tanggal' => $request->waktu_barangmasuk,
+                ]);
         return redirect('data_barangmasuk')->with('status', 'Data Barang Masuk Berhasil Diubah!');
     }
     public function delete($id)
