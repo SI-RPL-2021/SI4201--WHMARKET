@@ -87,6 +87,11 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2> Master Barang </h2>
                     <br>
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
                     @if(auth()->user()->role == 'admin')
                     <a href="{{ url('tambah_masterbarang') }}" class="btn btn-primary mt-3">Tambah Master Barang</a>
                     @endif
@@ -116,7 +121,7 @@
                              <a href ="{{ url('edit_masterbarang/'.$item->id) }}">
                              <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                              </a>
-                             <form action="{{ url('masterbarang/'.$item->id) }}" method="post" class="d-inline">
+                             <form action="{{ url('masterbarang/'.$item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin untuk menghapus data ini?')">
                               @method('delete')
                                 @csrf
                                 
