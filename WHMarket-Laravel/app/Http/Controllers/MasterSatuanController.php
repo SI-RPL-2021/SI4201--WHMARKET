@@ -22,7 +22,7 @@ class MasterSatuanController extends Controller
         \DB::table('mastersatuan')->insert([
             'nama_satuan' => $request->nama_satuan
             ]);
-            return redirect('mastersatuan');
+            return redirect('mastersatuan')->with('status', 'Master Satuan Berhasil Ditambah!');
     }
     public function updateMasterSatuan($id)
     {
@@ -40,7 +40,7 @@ class MasterSatuanController extends Controller
     public function delete($id)
     {
         \DB::table('mastersatuan')->where('id', $id)->delete();
-        return redirect('mastersatuan');
+        return redirect('mastersatuan')->with('status', 'Master Satuan Berhasil Dihapus!'); //
     }
 
 }

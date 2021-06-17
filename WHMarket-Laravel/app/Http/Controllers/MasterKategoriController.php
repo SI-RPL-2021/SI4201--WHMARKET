@@ -22,7 +22,7 @@ class MasterKategoriController extends Controller
         \DB::table('masterkategori')->insert([
             'nama_kategori' => $request->nama_kategori
             ]);
-            return redirect('masterkategori');
+            return redirect('masterkategori')->with('status', 'Master Kategori Berhasil Ditambah!');
     }
     public function updateMasterKategori($id)
     {
@@ -40,7 +40,7 @@ class MasterKategoriController extends Controller
     public function delete($id)
     {
         \DB::table('masterkategori')->where('id', $id)->delete();
-        return redirect('masterkategori');
+        return redirect('masterkategori')->with('status', 'Master Kategori Berhasil Dihapus!'); //
     }
 
 }

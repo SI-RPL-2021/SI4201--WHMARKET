@@ -88,9 +88,11 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2> Master Satuan </h2>
                     <br>
-                    @if(auth()->user()->role == 'admin')
-                    <a href="{{ url('tambah_mastersatuan') }}" class="btn btn-primary mt-3">Tambah Master Satuan</a>
-                    @endif
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
 					<br><br>
 					<table class="table table-bordered mt-3">
 						<thead class="thead-dark">
