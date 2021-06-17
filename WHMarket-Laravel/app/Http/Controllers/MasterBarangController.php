@@ -34,7 +34,7 @@ class MasterBarangController extends Controller
             'kemasan' => $request->kemasan,
             'harga' => $request->harga
             ]);
-            return redirect('masterbarang');
+            return redirect('masterbarang')->with('status', 'Data Master Barang Berhasil Ditambah!');
     }
     public function updateMasterBarang($id)
     {
@@ -54,12 +54,12 @@ class MasterBarangController extends Controller
             'kemasan' => $request->kemasan,
             'harga' => $request->harga
         ]);
-        return redirect('masterbarang');
+        return redirect('masterbarang')->with('status', 'Data Master Barang Berhasil Diubah!');
     }
     public function delete($id)
     {
         \DB::table('masterbarang')->where('id', $id)->delete();
-        return redirect('masterbarang');
+        return redirect('masterbarang')->with('status', 'Data Master Barang Berhasil Dihapus!');
     }
 }
 
