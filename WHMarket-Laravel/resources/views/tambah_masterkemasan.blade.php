@@ -66,7 +66,10 @@
            
         </ul>
     
-        <li><a href="{{ url('pemeriksaanbarang') }}"><i class="fas fa-store"></i>&nbsp; Pemeriksaan Barang</a></li>
+        @if(auth()->user()->role == 'superadmin')
+                <li><a href="{{ url('pemeriksaanbarang') }}"><i class="fas fa-store"></i>&nbsp; Pemeriksaan Barang</a>
+                </li>
+                @endif
    <li><a href="{{ url('dashboard_reporting') }}"><i class="fas fa-chart-bar"></i>&nbsp; Dashboard Reporting</a></li>
    <li><a href="{{ url('datasupplier') }}"><i class="fas fa-warehouse"></i>&nbsp; Data Supplier</a></li>
    <li><a href="{{ url('datapegawai') }}"><i class="fas fa-user"></i>&nbsp; Data Pegawai</a></li>
@@ -87,6 +90,11 @@
    
    <div class="col-md-10" style="width: 20cm; padding-left: 3cm;">
    <h2>  Tambah Master Kemasan </h2><br>
+   @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
             <form action="{{ url('masterkemasan') }}" method="post" enctype="multipart/form-data">
                @csrf
 					<div class="form-group">

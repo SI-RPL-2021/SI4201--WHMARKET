@@ -66,7 +66,10 @@
            
         </ul>
     
-        <li><a href="{{ url('pemeriksaanbarang') }}"><i class="fas fa-store"></i>&nbsp; Pemeriksaan Barang</a></li>
+        @if(auth()->user()->role == 'superadmin')
+                <li><a href="{{ url('pemeriksaanbarang') }}"><i class="fas fa-store"></i>&nbsp; Pemeriksaan Barang</a>
+                </li>
+                @endif
    <li><a href="{{ url('dashboard_reporting') }}"><i class="fas fa-chart-bar"></i>&nbsp; Dashboard Reporting</a></li>
    <li><a href="{{ url('datasupplier') }}"><i class="fas fa-warehouse"></i>&nbsp; Data Supplier</a></li>
    <li><a href="{{ url('datapegawai') }}"><i class="fas fa-user"></i>&nbsp; Data Pegawai</a></li>
@@ -87,6 +90,11 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2>   Master Kemasan </h2>
                     <br>
+                    @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
                     @if(auth()->user()->role == 'admin')
 					<a href="{{ url('tambah_masterkemasan') }}" class="btn btn-primary mt-3">Tambah Master Kemasan</a>
                @endif
@@ -107,7 +115,7 @@
                         <a href ="{{ url('edit_masterkemasan/'.$item->id) }}">
                         <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                         </a>
-                        <form action="{{ url('masterkemasan/'.$item->id) }}" method="post" class="d-inline">
+                        <form action="{{ url('masterkemasan/'.$item->id) }}" method="post" class="d-inline" onsubmit="return confirm('Apakah Anda yakin untuk menghapus data ini?')">
                          @method('delete')
                            @csrf
                            

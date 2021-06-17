@@ -22,7 +22,8 @@ class MasterKemasanController extends Controller
         \DB::table('masterkemasan')->insert([
             'nama_kemasan' => $request->nama_kemasan
             ]);
-            return redirect('masterkemasan');
+            return redirect('masterkemasan')->with('status', 'Master Kemasan Berhasil Ditambah!');
+            
     }
     public function updateMasterKemasan($id)
     {
@@ -40,6 +41,6 @@ class MasterKemasanController extends Controller
     public function delete($id)
     {
         \DB::table('masterkemasan')->where('id', $id)->delete();
-        return redirect('masterkemasan');
+        return redirect('masterkemasan')->with('status', 'Master Kemasan Berhasil Dihapus!');
     }
 }
