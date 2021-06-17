@@ -15,7 +15,7 @@ class BarangKeluarController extends Controller
     
     public function tambah_data_barangkeluar()
     {
-        $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang','LEFT')->select('masterbarang.id', 'masterbarang.nama_barang')->get();
+        $masterbarang = \DB::table('masterbarang')->join('transaksi_barang', 'masterbarang.id', '=', 'transaksi_barang.id_barang','LEFT')->select('masterbarang.id', 'masterbarang.nama_barang')->distinct()->get();
         // dd($masterbarang);
         return view('tambah_data_barangkeluar', ['masterbarang' => $masterbarang]);
         

@@ -83,7 +83,7 @@
     <div class="col-md-10" style="padding-left:0cm; ">
         <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:103.3%; ">
             <li> <a class="btn btn-danger my-2 my-sm-0 text-light" style="font-family: Arial; font-weight: bold;"
-                    href=" ">LOGOUT</a> </li>
+                    href="{{ url('logout') }}">LOGOUT</a> </li>
 
         </ol>
 
@@ -109,6 +109,14 @@
             <div class="form-group">
                 <label>Waktu Barang Masuk </label>
                 <input type="date" class="form-control" name="waktu_barangmasuk" required>
+            </div>
+            <div class="form-group">
+                <label>Supplier</label>
+                <select name="supplier" id="nama_supplier" class="form-control">
+                    @foreach ($datasupplier as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama_supplier }}</option>
+                    @endforeach
+                </select>
             </div>
             <br>
 

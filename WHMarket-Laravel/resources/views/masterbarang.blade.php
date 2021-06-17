@@ -78,7 +78,7 @@
  
    <div class="col-md-10" style="padding-left:0cm; ">
       <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#BFB5B2; width:103.3%; ">
-      <li> <a class="btn btn-danger my-2 my-sm-0 text-light"  style="font-family: Arial; font-weight: bold;"   href=" ">LOGOUT</a> </li>
+      <li> <a class="btn btn-danger my-2 my-sm-0 text-light"  style="font-family: Arial; font-weight: bold;"   href="{{ url('logout') }}">LOGOUT</a> </li>
           
       </ol>
       
@@ -87,7 +87,9 @@
    <div class="col-md-10" style="margin-top: 0px;">
                     <h2> Master Barang </h2>
                     <br>
+                    @if(auth()->user()->role == 'admin')
                     <a href="{{ url('tambah_masterbarang') }}" class="btn btn-primary mt-3">Tambah Master Barang</a>
+                    @endif
                     <br><br>
                     <table class="table table-bordered mt-3">
                        <thead class="thead-dark">
@@ -110,13 +112,16 @@
                              <td>{{ $item->harga }}</td>
                              
                              <td>
+                             @if(auth()->user()->role == 'admin')
                              <a href ="{{ url('edit_masterbarang/'.$item->id) }}">
                              <button type="submit" class="btn btn-primary btn-sm">Edit</button>
                              </a>
                              <form action="{{ url('masterbarang/'.$item->id) }}" method="post" class="d-inline">
                               @method('delete')
                                 @csrf
+                                
                                 <button class="btn btn-danger btn-sm">Delete</button>
+                                @endif
                               </form>
                              </td>
                        </thead>
