@@ -35,7 +35,7 @@ class MasterKategoriController extends Controller
         ->update([
             'nama_kategori' => $request->nama_kategori
         ]);
-        return redirect('masterkategori');
+        return redirect('masterkategori')->with('status', 'Master Kategori Berhasil Diubah!');
     }
     public function delete($id)
     {

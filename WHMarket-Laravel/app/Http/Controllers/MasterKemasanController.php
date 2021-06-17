@@ -36,7 +36,7 @@ class MasterKemasanController extends Controller
         ->update([
             'nama_kemasan' => $request->nama_kemasan
         ]);
-        return redirect('masterkemasan');
+        return redirect('masterkemasan')->with('status', 'Master Kemasan Berhasil Diubah!');
     }
     public function delete($id)
     {
