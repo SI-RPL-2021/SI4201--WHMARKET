@@ -99,7 +99,7 @@
                @csrf
 					<div class="form-group">
 						<label>Nama Kemasan</label>
-						<input type="text" class="form-control" name="nama_kemasan">
+						<input type="text" class="form-control" name="nama_kemasan" required>
 
                   <br>
 					

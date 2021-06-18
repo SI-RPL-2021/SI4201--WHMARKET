@@ -99,7 +99,7 @@
                @csrf
 					<div class="form-group">
 						<label>Nama Kategori</label>
-						<input type="text" class="form-control" name="nama_kategori">
+						<input type="text" class="form-control" name="nama_kategori" required>
 
                   <br>
 					

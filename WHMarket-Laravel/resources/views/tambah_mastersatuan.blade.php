@@ -89,11 +89,16 @@
    
    <div class="col-md-10" style="width: 20cm; padding-left: 3cm;">
    <h2>Tambah Master Satuan </h2><br>
+   @if (session('status'))
+                    <div class="alert alert-success">
+                        {{ session('status') }}
+                    </div>
+                @endif
             <form action="{{ url('mastersatuan') }}" method="post" enctype="multipart/form-data">
                @csrf
 					<div class="form-group">
 						<label>Nama Satuan</label>
-						<input type="text" class="form-control" name="nama_satuan">
+						<input type="text" class="form-control" name="nama_satuan" required>
 
                   <br>
 					
