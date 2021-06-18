@@ -93,23 +93,23 @@
                @csrf
                <div class="form-group">
                 <label>Nama Supplier</label>
-                <input type="text" class="form-control" name="nama_supplier">
+                <input type="text" class="form-control" name="nama_supplier" required>
             </div>
             <div class="form-group">
                 <label>Alamat</label>
-                <input type="text" class="form-control" name="alamat">
+                <input type="text" class="form-control" name="alamat" required>
             </div>
             <div class="form-group">
                 <label>Kota</label>
-                <input type="text" class="form-control" name="kota">
+                <input type="text" class="form-control" name="kota" required>
             </div>
             <div class="form-group">
                 <label>Email</label>
-                <input type="email" class="form-control" name="email">
+                <input type="email" class="form-control" name="email" required>
             </div>
             <div class="form-group">
                 <label>No HP</label>
-                <input type="number" class="form-control" name="no_hp">
+                <input type="number" class="form-control" name="no_hp" required>
             </div>
                   <br>
 					
