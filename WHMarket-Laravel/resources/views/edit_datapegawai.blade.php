@@ -123,7 +123,7 @@
 					</div>
                <div class="form-group">
 						<label>User ID</label>
-						<input type="number" class="form-control" name="user_id" readonly value="{{ $datapegawai->user_id }}">
+						<input type="text" class="form-control" name="user_id" readonly value="{{ $datapegawai->user_id }}">
 					</div>
                <br>
    

@@ -115,7 +115,7 @@
 					</div>
                     <div class="form-group">
 						<label>No HP</label>
-						<input type="number" class="form-control" name="no_hp" value="{{ $datasupplier->no_hp }}" required>
+						<input type="text" class="form-control" name="no_hp" value="{{ $datasupplier->no_hp }}" required>
 					</div>
                <br>
    
