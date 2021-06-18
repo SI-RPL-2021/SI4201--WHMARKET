@@ -18,29 +18,36 @@ class DataPegawaiController extends Controller
     }
     public function inputDataPegawai(Request $request)
     {
-        $user = new \App\Models\User;
-        $user->role = 'pegawai';
-        $user->name = $request->nama_pegawai;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
-        $user->remember_token = Str::random(60);
-        $user->save();
-
+        $tb_user = \DB::table('users')->select('email')->where('users.email', $request->email)->exists();
+        if($tb_user) {
         
-        \DB::table('datapegawai')->insert([
-            'nama_pegawai' => $request->nama_pegawai,
-            'user_id' => $user->id,
-            'alamat' => $request->alamat,
-            'kota' => $request->kota,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'no_hp' => $request->no_hp
+            return redirect('tambah_datapegawai')->with('status', 'Email sudah digunakan!');
 
-        ]);
-
-        
-            return redirect('datapegawai')->with('status', 'Data Pegawai Berhasil Ditambah!');
+        } else {
+            $user = new \App\Models\User;
+            $user->role = 'pegawai';
+            $user->name = $request->nama_pegawai;
+            $user->email = $request->email;
+            $user->password = bcrypt($request->password);
+            $user->remember_token = Str::random(60);
+            $user->save();
+    
+            
+            \DB::table('datapegawai')->insert([
+                'nama_pegawai' => $request->nama_pegawai,
+                'user_id' => $user->id,
+                'alamat' => $request->alamat,
+                'kota' => $request->kota,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+                'no_hp' => $request->no_hp
+    
+            ]);
+    
+            
+                return redirect('datapegawai')->with('status', 'Data Pegawai Berhasil Ditambah!');
     }
+}
     public function updateDataPegawai($id)
     {
         $datapegawai = \DB::table('datapegawai')->where('id', $id)->first();

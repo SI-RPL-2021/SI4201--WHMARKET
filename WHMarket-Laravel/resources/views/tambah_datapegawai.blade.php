@@ -27,7 +27,7 @@
       </ol>
    </div>
 	
-   <div class="col-md-2 colmenu" style="padding:0; width:100%; background-color:#b3cde0;">
+   <div class="col-md-2 colmenu" style="padding:0; width:100%;  height:20cm; background-color:#b3cde0;">
       
       <div class="container" id='cssmenu' style="width:100%; padding:0cm;" >
 <ul style="padding:0; background-color:#b3cde0;"> 
@@ -85,9 +85,16 @@
       </ol>
       
    </div>
+   <br>
    
    
    <div class="col-md-10" style="width: 20cm; padding-left: 3cm;">
+   <br>
+   @if (session('status'))
+      <div class="alert alert-danger">
+          {{ session('status') }}
+      </div>
+  @endif
    <h2>Tambah Data Pegawai </h2><br>
             <form action="{{ url('datapegawai') }}" method="post" enctype="multipart/form-data">
                @csrf
