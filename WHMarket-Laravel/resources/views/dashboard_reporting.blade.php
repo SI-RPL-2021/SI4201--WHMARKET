@@ -73,7 +73,6 @@
                 <li><a href="{{ url('pemeriksaanbarang') }}"><i class="fas fa-store"></i>&nbsp; Pemeriksaan Barang</a>
                 </li>
                 @endif
-                
                 <li><a href="{{ url('dashboard_reporting') }}"><i class="fas fa-chart-bar"></i>&nbsp; Dashboard
                         Reporting</a></li>
                 <li><a href="{{ url('datasupplier') }}"><i class="fas fa-warehouse"></i>&nbsp; Data Supplier</a></li>
@@ -101,7 +100,49 @@
     <div class="col-md-10" style="margin-top: 0px;">
         <h2> Dashboard Reporting </h2>
         <br>
-       
+
+        <div id="chart"></div>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script>
+        Highcharts.chart('chart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Chart Data Barang Keluar'
+    },
+    xAxis: {
+        categories: {!!json_encode($categories)!!},
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Jumlah'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Jumlah',
+        data: {!!json_encode($jumlah)!!}
+
+    }]
+});
+</script>
+
 
     </div>
 
