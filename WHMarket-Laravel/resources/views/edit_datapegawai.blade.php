@@ -106,7 +106,7 @@
 					</div>
                     <div class="form-group">
 						<label>Email</label>
-						<input type="email" class="form-control" name="email" value="{{ $datapegawai->email }}">
+						<input type="email" class="form-control" name="email" readonly value="{{ $datapegawai->email }}">
 					</div>
                <div class="form-group">
 						<label>Password</label>

@@ -64,7 +64,8 @@ class DataPegawaiController extends Controller
     }
     public function delete($id)
     {
-        \DB::table('datapegawai')->where('id', $id)->delete();
+        \DB::table('users')->where('id', $id)->delete();
+        \DB::table('datapegawai')->where('user_id', $id)->delete();
         return redirect('datapegawai')->with('status', 'Data Pegawai Berhasil Dihapus!');
     }
 }

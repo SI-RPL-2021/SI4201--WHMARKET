@@ -96,6 +96,9 @@
                         {{ session('status') }}
                     </div>
                 @endif
+                @if(auth()->user()->role == 'admin')
+					<a href="{{ url('tambah_masterkategori') }}" class="btn btn-primary mt-3">Tambah Master Kategori</a>
+               @endif
 					<br><br>
 					<table class="table table-bordered mt-3">
 						<thead class="thead-dark">

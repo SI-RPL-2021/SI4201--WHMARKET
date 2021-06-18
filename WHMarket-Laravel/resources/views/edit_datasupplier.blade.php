@@ -94,23 +94,23 @@
           @csrf
 					<div class="form-group">
 						<label>Nama Supplier</label>
-						<input type="text" class="form-control" name="nama_supplier" value="{{ $datasupplier->nama_supplier }}">
+						<input type="text" class="form-control" name="nama_supplier" value="{{ $datasupplier->nama_supplier }}" required>
 					</div>
 					<div class="form-group">
 						<label>Alamat</label>
-						<input type="text" class="form-control" name="alamat" value="{{ $datasupplier->alamat }}">
+						<input type="text" class="form-control" name="alamat" value="{{ $datasupplier->alamat }}" required>
 					</div>
                     <div class="form-group">
 						<label>Kota</label>
-						<input type="text" class="form-control" name="kota" value="{{ $datasupplier->kota }}">
+						<input type="text" class="form-control" name="kota" value="{{ $datasupplier->kota }}" required>
 					</div>
                     <div class="form-group">
 						<label>Email</label>
-						<input type="email" class="form-control" name="email" value="{{ $datasupplier->email }}">
+						<input type="email" class="form-control" name="email" value="{{ $datasupplier->email }}" required>
 					</div>
                     <div class="form-group">
 						<label>No HP</label>
-						<input type="number" class="form-control" name="no_hp" value="{{ $datasupplier->no_hp }}">
+						<input type="number" class="form-control" name="no_hp" value="{{ $datasupplier->no_hp }}" required>
 					</div>
                <br>
    

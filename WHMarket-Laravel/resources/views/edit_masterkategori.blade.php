@@ -20,8 +20,8 @@
 </head>
 <body>
 
-   <div class="row">
-   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:100%;">>
+<div class="row">
+   <ol class="breadcrumb" style="margin:0;border-radius:0; background-color:#6497B1; font-size:30px; width:100%;">
           <li class="active" style="padding-left:8px; "> </li> 
           <font color="#ffffff">WHMARKET</font><br>
       </ol>
@@ -95,7 +95,7 @@
           @csrf
 					<div class="form-group">
 						<label>Nama Kategori</label>
-						<input type="text" class="form-control" name="nama_kategori" value="{{ $masterkategori->nama_kategori }}">
+						<input type="text" class="form-control" name="nama_kategori" value="{{ $masterkategori->nama_kategori }}" required>
 					  </div>
 					
                <br>

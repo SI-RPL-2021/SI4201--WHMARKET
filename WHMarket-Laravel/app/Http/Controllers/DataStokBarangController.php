@@ -15,7 +15,7 @@ class DataStokBarangController extends Controller
 
     public function tambah_data_stokbarang()
     {
-        $masterbarang = \DB::table('masterbarang')->join('data_stokbarang', 'masterbarang.id', '=', 'data_stokbarang.id_barang','LEFT')->select('masterbarang.id', 'masterbarang.nama_barang')->where('data_stokbarang.stok',NULL)->get();
+        $masterbarang = \DB::table('masterbarang')->join('data_stokbarang', 'masterbarang.id', '=', 'data_stokbarang.id_barang','LEFT')->select('masterbarang.id', 'masterbarang.nama_barang')->get();
         // dd($masterbarang);
         return view('tambah_data_stokbarang', ['masterbarang' => $masterbarang]);
     }

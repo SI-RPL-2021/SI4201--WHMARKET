@@ -94,7 +94,7 @@
           @csrf
 					<div class="form-group">
 						<label>Nama Satuan</label>
-						<input type="text" class="form-control" name="nama_satuan" value="{{ $mastersatuan->nama_satuan }}";
+						<input type="text" class="form-control" name="nama_satuan" value="{{ $mastersatuan->nama_satuan }}" required;
 					</div>
 					
                <br>
