@@ -102,7 +102,7 @@ Route::get('tambah_pemeriksaanbarang', 'App\Http\Controllers\PemeriksaanBarangCo
 Route::post('data_stokbarang', 'App\Http\Controllers\DataStokBarangController@InputDataStokBarang');
 Route::get('edit_data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@updateDataStokBarang');
 Route::patch('data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@updateDataStokBarangProcess');
-Route::delete('data_stokbarang/{id}', 'App\Http\Controllers\DataPegawaiController@delete');
+Route::delete('data_stokbarang/{id}', 'App\Http\Controllers\DataStokBarangController@delete');
 
 
 Route::post('data_barangmasuk', 'App\Http\Controllers\BarangMasukController@InputDataBarangMasuk');

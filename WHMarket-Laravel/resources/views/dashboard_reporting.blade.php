@@ -31,7 +31,7 @@
         </ol>
     </div>
 
-    <div class="col-md-2 colmenu" style="padding:0; width:100%; height:35cm;background-color:#b3cde0;">
+    <div class="col-md-2 colmenu" style="padding:0; width:100%; height:20cm;background-color:#b3cde0;">
 
         <div class="container" id='cssmenu' style="width:100%; padding:0cm;">
             <ul style="padding:0; background-color:#b3cde0;">

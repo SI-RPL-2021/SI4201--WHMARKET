@@ -28,7 +28,7 @@
       </ol>
    </div>
 	
-   <div class="col-md-2 colmenu" style="padding:0; width:100%; height:18cm;background-color:#b3cde0;">
+   <div class="col-md-2 colmenu" style="padding:0; width:100%; height:25cm; background-color:#b3cde0;">
       
       <div class="container" id='cssmenu' style="width:100%; padding:0cm;" >
 <ul style="padding:0; background-color:#b3cde0;"> 
